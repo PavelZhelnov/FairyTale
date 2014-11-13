@@ -1,0 +1,374 @@
+<script type="text/javascript" src="{rootPath:static}/scripts/utils/dhtmlSuite-tabView.js-uncompressed.js"></script>
+<script type="text/javascript" src="{rootPath:static}/scripts/utils/ajax-dynamic-content.js"></script>
+<script type="text/javascript" src="{rootPath:static}/scripts/utils/ajax-tooltip.js"></script>
+<script type="text/javascript" src="{rootPath:static}/scripts/utils/form-field-tooltip.js"></script>
+<script type="text/javascript" src="{rootPath:static}/scripts/forms.js"></script>
+
+<script type="text/javascript" src="{rootPath:static}/scripts/utils/ajax.js"></script>
+<script type="text/javascript" src="{rootPath:static}/scripts/utils/dhtmlSuite-autoComplete.js"></script>
+<script type="text/javascript" src="{rootPath:static}/scripts/utils/ajax-dynamic-content.js"></script>
+
+<span class="headline">Global System Settings</span>
+<form method=POST action="" name="gss" enctype="multipart/form-data">
+<input type=hidden name="o" value="GlobalSystemSettingsView">
+<input type=hidden name="step" value="update">
+<input type="submit" style="visibility:hidden">
+{activetab}
+{item_langs1}{item_langs2}{id}
+<span class="error">{header_error}</span>
+<table border=0 cellpadding=2 cellspacing=0 width=368 align="center">
+	<tr>
+		<td valign=top align=left>Last Modified:</td>
+		<td valign=top align=left>{last_modified_date} by {last_modified_member}<br><br> </td>
+		<td></td>
+		<td></td>
+	</tr>	
+</table>
+<div id="DHTMLSuite_tabView2">
+	<div class="DHTMLSuite_aTab">
+
+		<fieldset style="width='400px;'">
+		<legend>Address defaults</legend>
+		<table border=0 cellpadding=2 cellspacing=0 width=450 align="center">
+	
+			<tr>
+				<td valign=top align="right" width="200">Default City :</td>
+				<td valign=top align=left width="200">{default_city} </td>
+				<td><img src="{picPath:static}/elements/required.gif" border=0></td>
+				<td valign="middle"><img src="{picPath:static}/tooltip/querymark.png" border="0" onmouseover="ajax_showTooltip('{homePath:static}/help/brief/2/',this);return false" onmouseout="ajax_hideTooltip();" ></td>
+			</tr>	
+			<tr>
+				<td colspan=4><span class="error">{city_error}</span></td>
+			</tr>
+			<tr>
+				<td valign=top align="right">Default State :</td>
+				<td valign=top align=left>{default_state} </td>
+				<td><img src="{picPath:static}/elements/required.gif" border=0></td>
+				<td valign="middle"><img src="{picPath:static}/tooltip/querymark.png" border="0" onmouseover="ajax_showTooltip('{homePath:static}/help/brief/3/',this);return false" onmouseout="ajax_hideTooltip();" ></td>
+			</tr>	
+			<tr>
+				<td colspan=4><span class="error">{state_error}</span></td>
+			</tr>
+		</table>
+		</fieldset>
+
+		<fieldset style="width='400px;'">
+		<legend>Email defaults</legend>
+		<table border=0 cellpadding=2 cellspacing=0 width=450 align="center">
+
+			<tr>
+				<td valign=top align="right" width="200">Email Delimeter:</td>
+				<td valign=top align=left width="200">{email_delimeter} </td>
+				<td><img src="{picPath:static}/elements/required.gif" border=0></td>
+				<td valign="middle"></td>
+			</tr>	
+			<tr>
+				<td colspan=4><span class="error">{support_email_error}</span></td>
+			</tr>
+		
+			<tr>
+				<td valign=top align="right" width="200">Default Support Email:</td>
+				<td valign=top align=left width="200">{support_email} </td>
+				<td><img src="{picPath:static}/elements/required.gif" border=0></td>
+				<td valign="middle"><img src="{picPath:static}/tooltip/querymark.png" border="0" onmouseover="ajax_showTooltip('{homePath:static}/help/brief/5/',this);return false" onmouseout="ajax_hideTooltip();" ></td>
+			</tr>	
+			<tr>
+				<td colspan=4><span class="error">{support_email_error}</span></td>
+			</tr>
+			<tr>
+				<td valign=top align="right">Email for Suggestions and Feedback:</td>
+				<td valign=top align=left>{feedback_email} </td>
+				<td><img src="{picPath:static}/elements/required.gif" border=0></td>
+				<td></td>
+			</tr>	
+			<tr>
+				<td colspan=4><span class="error">{feedback_email_error}</span></td>
+			</tr>
+			<tr>
+				<td valign=top align="right">Email For News Subscription:</td>
+				<td valign=top align=left>{subscription_email} </td>
+				<td><img src="{picPath:static}/elements/required.gif" border=0></td>
+				<td></td>
+			</tr>	
+			<tr>
+				<td colspan=4><span class="error">{subscription_email_error}</span></td>
+			</tr>
+			<tr>
+				<td valign=top align="right">Offer Confirmation Copy Emails:</td>
+				<td valign=top align=left>{offer_confirmation_email} </td>
+				<td><img src="{picPath:static}/elements/required.gif" border=0></td>
+				<td valign="middle"><img src="{picPath:static}/tooltip/querymark.png" border="0" onmouseover="ajax_showTooltip('{homePath:static}/help/brief/6/',this);return false" onmouseout="ajax_hideTooltip();" ></td>
+			</tr>	
+			<tr>
+				<td colspan=4><span class="error">{offer_confirmation_email_error}</span></td>
+			</tr>
+		</table>
+		</fieldset>
+	</div>
+
+	<div class="DHTMLSuite_aTab">	
+			<div id="DHTMLSuite_tabView3">
+				<div class="DHTMLSuite_aTab">
+					<table border=0 cellpadding=2 cellspacing=0 width=600 align="center">
+						<tr>
+							<td valign=top align=left>Overdue Property Showing Appointment Autoclose period:</td>
+							<td valign=top align=left>{autoclose_overdue_tasks_period} days</td>
+							<td><img src="{picPath:static}/elements/required.gif" border=0></td>
+							<td valign="middle"><img src="{picPath:static}/tooltip/querymark.png" border="0" onmouseover="ajax_showTooltip('{homePath:static}/help/brief/4/',this);return false" onmouseout="ajax_hideTooltip();" ></td>
+						</tr>
+						
+						<tr>
+							<td>Default Listing Agent:</td>
+							<td>{default_listing_agent_field}{default_listing_agent_id}</td>
+							<td><a href="javascript:void(0);" onClick="javascript:var cid = getMemberId(document.forms['gss'].elements['form[default_listing_agent][id]']); window.open('{homePath:static}/list/memberlist/open/'+cid+'/open/gss/form[default_listing_agent][id]//','_blank','scrollbars=yes,resizable=no,status=no,width=850,height=590')"><img src="{picPath:static}/buttons/zoom.gif" border="0" alt="Select Member to assign" hspace="0" vspace="0" ></a>&nbsp;&nbsp;<a href="javascript:void(0);" onClick="javascript:document.forms[0].elements['form[default_listing_agent][id]'].value='0';document.forms['gss'].elements['form[default_listing_agent]'].value='';document.forms['gss'].elements['form[default_listing_agent][id]'].value=''; document.getElementById('form[default_listing_agent][id]_bt').style.visibility='hidden'"><img src="{picPath:static}/buttons/eraser.gif" border="0" alt="Clear the agent information" hspace="0" vspace="0" ></a>&nbsp;</td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td>By Default Show Appointments for Default Listing Agent</td>
+							<td><input type="hidden" name="form[showing_app_listing_agent_first]" value="0">{showing_app_listing_agent_first}</td>
+							<td></td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td valign=top>Default urgency period :</td>
+							<td valign=top>{default_urgency_period} </td>
+							<td><img src="{picPath:static}/elements/required.gif" border=0></td>
+							<td></td>
+						</tr>	
+						<tr>
+							<td colspan=4><span class="error">{default_urgency_period_error}</span></td>
+						</tr>
+					</table>
+				</div>
+				<div class="DHTMLSuite_aTab">
+					<table border=0 cellpadding=2 cellspacing=0 width=600 align="center">
+						<tr>
+							<td valign=top align=left>Default email when sending confirmations to office:</td>
+							<td valign=top align=left>{em_office_steps_email}</td>
+							<td></td>
+							<td valign="middle"></td>
+						</tr>
+						<tr>
+							<td>Default Text Body for EM Step, when sending for closing:</td>
+							<td>{em_step3_default_body}</td>
+							<td></td>
+							<td></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+	</div>
+	<div class="DHTMLSuite_aTab">
+		<fieldset style="width='400px;'">
+		<legend>Warn Period and Notification Method:</legend>
+		<table>
+			<tr>
+				<td></td>
+				<td>License Expiration Warn Period:</td>
+				<td valign=top>{license_expiration_warn_period}<br></td>
+				<td></td>
+			</tr>
+		</table>	
+		<table >	
+			<tr >
+				<td colspan=4>License Expiration Notification Method:</td>
+			</tr>	
+			<tr>		
+		       <td valign=top></td>
+				<td valign=top>
+				{license_expiration_notification_method1} - Notify via email<br>
+				<span id="smail" >{send_mail1}</br>{send_mail2} </span><br></br>
+				{license_expiration_notification_method2} - Notify via message at Home page<br>
+				<span id="smesg" >{send_message1}</br>{send_message2}</span><br>
+				{license_expiration_notification_method}
+				</td>
+				<td></td>
+			</tr>			
+		</table>
+		
+		</fieldset>
+	</div>
+</div>
+<table border=0 cellpadding=2 cellspacing=0 width=368 align="center">
+	<tr valign=top>
+		<td align=center valign=middle height=40>
+			<input class=button id="formSubmit" type="submit" style="width:250px;" value="Update Settings" onclick="GetSettings()"/><!---->
+		</td>
+	</tr>
+</table>
+{formEnd:static}
+
+<SCRIPT language="javascript">
+
+window.onload = function(){leftS:static} 
+	if(!document.getElementById("mail_metod").checked){leftS:static} 
+  		document.getElementById("smail").style.visibility = "hidden";
+  		{rightS:static}
+  	if(!document.getElementById("message_metod").checked){leftS:static} 
+  		document.getElementById("smesg").style.visibility = "hidden";
+  		{rightS:static}
+{rightS:static}
+
+function tabCallBack() {leftS:static} 
+	document.forms.gss.elements['form[_activetab]'].value = tabViewObj2.getTabIndex();
+{rightS:static}
+
+var tabViewObj2 = new DHTMLSuite.tabView();
+tabViewObj2.setParentId('DHTMLSuite_tabView2');
+tabViewObj2.setTabTitles(Array('Common section', 'Property Defaults','License Expiration'));
+tabViewObj2.setIndexActiveTab(document.forms.gss.elements['form[_activetab]'].value);
+tabViewObj2.setWidth('950');
+tabViewObj2.setCallbackOnTabSwitch("tabCallBack");
+tabViewObj2.init();
+
+
+var tabViewObj_prodSub = new DHTMLSuite.tabView();
+tabViewObj_prodSub.setParentId('DHTMLSuite_tabView3');
+tabViewObj_prodSub.setTabTitles(Array('General Details','Earnest Money'));
+//tabViewObj2.setIndexActiveTab(document.forms['step1'].elements['form[_activetab]'].value);
+tabViewObj_prodSub.setWidth('950');
+tabViewObj_prodSub.setHeight('370');
+tabViewObj_prodSub.init();
+
+/** TOOLTIP */
+
+	var tooltipObj = new DHTMLgoodies_formTooltip();
+	tooltipObj.setTooltipPosition('right');
+	tooltipObj.setPageBgColor('#EEE');
+	tooltipObj.setCloseMessage('Close');
+	tooltipObj.setTooltipWidth('250');
+	tooltipObj.setTooltipDisablePossibility();
+	tooltipObj.setTooltipPosition('right');
+	tooltipObj.initFormFieldTooltip();
+
+	autoComBA = new DHTMLSuite.autoComplete();
+	autoComBA.minimumLettersBeforeLookup=2;
+	autoComBA.add('form[default_listing_agent]','{homePath:static}/list/MemberList/getmemberlist?');
+	switchVisibilityForModifyButton(document.getElementById('form[default_listing_agent][id]'));
+	
+/*change warn peiod lisensi*/
+
+function ch_Period(){leftS:static}
+     //document.getElementById("license_expiration_notification_method").style.visibility = "visible";
+{rightS:static}
+/**/
+
+function FistMetod(){leftS:static}
+    
+	if(document.getElementById("mail_metod").checked)
+	 {leftS:static} 
+	 	document.getElementById("smail").style.visibility = "visible";
+	 	document.getElementById("send_mail1").checked =true;
+	 {rightS:static}
+	else if(!document.getElementById("mail_metod").checked)
+	{leftS:static} 
+	 document.getElementById("send_mail1").checked = false;
+	 document.getElementById("send_mail2").checked = false;
+	 var val = document.forms.gss.elements['form[license_expiration_notification_method]'].value;
+	 document.forms.gss.elements['form[license_expiration_notification_method]'].value = val.substr(1,1); 
+	 document.getElementById("smail").style.visibility = "hidden";
+	{rightS:static}
+	changeVariantMail();
+{rightS:static}
+/**/
+function SecondMetod(){leftS:static}
+	if(document.getElementById("message_metod").checked)
+	  {leftS:static}
+	 	document.getElementById("smesg").style.visibility = "visible";
+	 	document.getElementById("send_message1").checked = true;
+	  {rightS:static}
+	else if(!document.getElementById("message_metod").checked)
+	{leftS:static} 
+		document.getElementById("send_message1").checked = false;
+		document.getElementById("send_message2").checked = false;
+		var val = document.forms.gss.elements['form[license_expiration_notification_method]'].value;
+	    document.forms.gss.elements['form[license_expiration_notification_method]'].value = val.substr(0,1);
+		document.getElementById("smesg").style.visibility = "hidden";
+	{rightS:static} 
+	changeVariantMsg();
+{rightS:static}
+/**/
+function changeVariantMail(){leftS:static}
+	if(document.getElementById("send_mail1").checked)
+	 {leftS:static}
+		if((!document.getElementById("send_message1").checked) && (!document.getElementById("send_message2").checked) )
+		{leftS:static}
+	 		document.forms.gss.elements['form[license_expiration_notification_method]'].value = 1;
+	 	{rightS:static} 
+	 	if((document.getElementById("send_message1").checked) && (!document.getElementById("send_message2").checked))
+		{leftS:static}
+	 		document.forms.gss.elements['form[license_expiration_notification_method]'].value = 13;
+	 	{rightS:static} 
+	 	if((!document.getElementById("send_message1").checked) && (document.getElementById("send_message2").checked))
+		{leftS:static}
+	 		document.forms.gss.elements['form[license_expiration_notification_method]'].value = 14;
+	 	{rightS:static} 
+	{rightS:static}
+	if(document.getElementById("send_mail2").checked)
+	 {leftS:static}
+		if((!document.getElementById("send_message1").checked) && (!document.getElementById("send_message2").checked))
+		{leftS:static}
+	 		document.forms.gss.elements['form[license_expiration_notification_method]'].value = 2;
+	 	{rightS:static} 
+	 	if((document.getElementById("send_message1").checked) && (!document.getElementById("send_message2").checked))
+		{leftS:static}
+	 		document.forms.gss.elements['form[license_expiration_notification_method]'].value = 23;
+	 	{rightS:static} 
+	 	if((!document.getElementById("send_message1").checked) && (document.getElementById("send_message2").checked))
+		{leftS:static}
+	 		document.forms.gss.elements['form[license_expiration_notification_method]'].value = 24;
+	 	{rightS:static} 
+	 {rightS:static}
+{rightS:static}
+
+function changeVariantMsg()
+{leftS:static}
+	if(document.getElementById("send_message1").checked)
+	 {leftS:static}
+		if((!document.getElementById("send_mail1").checked) && (!document.getElementById("send_mail2").checked) )
+		{leftS:static}
+	 		document.forms.gss.elements['form[license_expiration_notification_method]'].value = 3;
+	 	{rightS:static} 
+	 	
+		if((document.getElementById("send_mail1").checked) && (!document.getElementById("send_mail2").checked))
+		{leftS:static}
+	 		document.forms.gss.elements['form[license_expiration_notification_method]'].value = 13;
+	 	{rightS:static} 
+	 	
+	 	if((!document.getElementById("send_mail1").checked) && (document.getElementById("send_mail2").checked))
+		{leftS:static}
+	 		document.forms.gss.elements['form[license_expiration_notification_method]'].value = 23;
+	 	{rightS:static} 
+	{rightS:static}
+	
+	if(document.getElementById("send_message2").checked)
+	 {leftS:static}
+		if((!document.getElementById("send_mail1").checked) && (!document.getElementById("send_mail2").checked))
+		{leftS:static}
+	 		document.forms.gss.elements['form[license_expiration_notification_method]'].value = 4;
+	 	{rightS:static}
+	 	
+	 if((document.getElementById("send_mail1").checked) && (!document.getElementById("send_mail2").checked))
+		{leftS:static}
+	 		document.forms.gss.elements['form[license_expiration_notification_method]'].value = 14;
+	 	{rightS:static}
+	 	
+	 if((!document.getElementById("send_mail1").checked) && (document.getElementById("send_mail2").checked))
+		{leftS:static}
+	 		document.forms.gss.elements['form[license_expiration_notification_method]'].value = 24;
+	 	{rightS:static}	
+	 {rightS:static}
+{rightS:static}
+function GetSettings(){leftS:static}
+ /**если ничего не выбрано ставим по умолчанию once and once для сообщения и почты**/
+	if((!document.getElementById("send_message1").checked) && (!document.getElementById("send_message2").checked) && (!document.getElementById("send_mail1").checked) && (!document.getElementById("send_mail2").checked))
+	{leftS:static}
+	 	document.forms.gss.elements['form[license_expiration_notification_method]'].value = 0;
+	{rightS:static}
+{rightS:static}
+
+
+var formValObj = new DHTMLSuite.formValidator({leftS:static} formRef:'gss',keyValidation:true,callbackOnFormValid:'enableSubmit',callbackOnFormInvalid:'disableSubmit',indicateWithBars:true {rightS:static});
+</SCRIPT>

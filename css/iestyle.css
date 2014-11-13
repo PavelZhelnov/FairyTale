@@ -1,0 +1,4 @@
+.message_background {
+	position: absolute;
+	top: expression(document.getElementsByTagName( 'body' )[0].scrollTop + "px");
+}

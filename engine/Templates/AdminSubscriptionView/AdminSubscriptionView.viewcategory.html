@@ -1,0 +1,67 @@
+{header_error} {model_error}<p>
+
+<a class="menuitem" href="{homePath:static}/Admin/AdminSubscription/ViewSubscribers/">{global.label.admin_viewallsubscribers}</a>
+
+<!-- BEGIN menu --><table width="490" border="0" align=center cellpadding=0 cellspacing=0>
+	<!-- BEGIN header --><tr>
+		<td width="478" background="{picPath:static}/box/top3.gif" class=first><img src="{picPath:static}/1.gif" width="8" height="1">{catname} (<a href="{homePath:static}/Admin/PersonalAlbumAdmin/EditCategory/{catid}">{local.label.edit_link}</a>/<a class="menuitem" href="{homePath:static}/Admin/PersonalAlbumAdmin/DeleteCategory/{catid}">{local.label.delete_link}</a>)</td>
+	</tr>
+	<tr>
+		<td width="478" valign=top align=center><img src="{picPath:static}/1.gif" width=478 height=5></td>
+	</tr>
+	<!-- END header -->
+	<tr>
+		<td width="478" valign=top align=center>
+		<!-- BEGIN category -->
+		<table border=0 cellpadding=0 cellspacing=0 width=468 align=center>
+			<tr><td height=15 bgcolor={catbgcolor} width={catwidth}><img src="{picPath:static}/1.gif" height=1 width={catwidth}></td>
+				<td bgcolor={catbgcolor} align=left valign=middle class=b width={catwidth2}><img src="{picPath:static}/arrows/arrow3.gif" width=9 height=9> {catname} (<a href="{homePath:static}/Admin/AdminSubscription/EditCategory/{catid}">{local.label.edit_link}</a>/<a class="menuitem" href="{homePath:static}/Admin/PersonalAlbumAdmin/DeleteCategory/{catid}">{local.label.delete_link})</a></td>
+			</tr>
+			<tr><td bgcolor={catbgcolor} width={catwidth}><img src="{picPath:static}/1.gif" height=3 width={catwidth}></td>
+				<td bgcolor={catbgcolor} width={catwidth2} background="{picPath:static}/arrows/dashed1.gif"><img src="{picPath:static}/1.gif" height=5 width={catwidth2}></td>
+			</tr>
+		</table><!-- END category -->
+		</td>
+	</tr>
+</table>
+<!-- END menu -->
+
+<table width="490" border="0" align=center cellpadding=0 cellspacing=0 bgcolor="#F8F8F8">
+	<tr>
+		<td width="6" height="30"><img src="{picPath:static}/box/top1.gif" height=30 width=6></td>
+		<td width="478" background="{picPath:static}/box/top3.gif" class=first align=left><img src="{picPath:static}/1.gif" width=8 height=1>{local.header.add_category} </td>
+		<td width="6" height="30"><img src="{picPath:static}/box/top2.gif" height=30 width=6></td>
+	</tr>
+	<tr>
+		<td width="6" background="{picPath:static}/box/08.gif"><img src="{picPath:static}/1.gif" width=6></td>
+		<td width="478" valign=top align=center>
+		<form method=POST action="./" enctype="multipart/form-data">
+		<input type=hidden name="o" value="AdminSubscriptionView">
+		<input type=hidden name="step" value="addcategory">
+		{item_langs1}{item_langs2}
+		<table border=0 cellpadding=2 cellspacing=0 width=468>
+			<tr>
+				<td width=126 valign=top align=right class=b>{local.label.parent_category}: </td>
+				<td width=2><img src="{picPath:static}/1.gif" height=1 width=2></td>
+				<td width=340 valign=top align=left>{categoryadd} <img src="{picPath:static}/must.gif"><br></td>
+			</tr>
+			<tr>
+				<td width=126 valign=top align=right class=b>{local.label.rus_category}: </td>
+				<td width=2><img src="{picPath:static}/1.gif" height=1 width=2></td>
+				<td width=340 valign=top align=left>{rus_name} <img src="{picPath:static}/must.gif"><br>{local.text.req_title} {rusname_error}</td>
+			</tr>
+			<tr>
+				<td width=126 valign=top align=right class=b>{local.label.eng_category}: </td>
+				<td width=2><img src="{picPath:static}/1.gif" height=1 width=2></td>
+				<td width=340 valign=top align=left>{eng_name} <img src="{picPath:static}/must.gif"><br>{local.text.req_title} {engname_error}</td>
+			</tr>
+			<tr valign=top>
+				<td colspan=3 align=center valign=middle height=40>
+					<input class=button type=reset value="{global.button.clear}" style="width:160px;">&nbsp;<input class=button type=submit name=submit style="width:190px;" value="{local.button.update_info}">
+				</td>
+			</tr>
+		</table>
+		{formEnd:static}
+		</td>
+	</tr>
+</table>

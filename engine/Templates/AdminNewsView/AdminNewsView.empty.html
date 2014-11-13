@@ -1,0 +1,64 @@
+<span class="headline" align="center">{global.header.head_news}</span>
+
+<br><br>
+<table border="0" width="100%" align="center">
+	<tr>
+		<td align=left height=25 valign=middle>
+			<center><span align="center" class="headlinesmall">{global.header.head_news_empty}</span></center>
+		</td>
+	</tr>
+</table>
+
+<form method=POST action="" enctype="multipart/form-data">
+<input type=hidden name="o" value="AdminNewsView">
+<input type=hidden name="step" value="add">
+<!--<input type="hidden" name="form[id]" value="{idn}"> -->
+{item_langs1}{item_langs2}
+<table border=0 cellpadding=2 cellspacing=0 width=468>
+	<tr>
+		<td valign=top align="center"><span class="headline" align="center">{global.button.admin_bt_add}</span> </td>
+	</tr>
+
+	<tr>
+		<td valign=top align="center" class=b>{global.label.admin_rus_version}: </td>
+	</tr>
+
+	<tr>
+		<td valign=top align="left" class=b>{global.label.admin_header}: </td>
+	</tr>
+	<tr>
+		<td valign=top align="left">{rus_header}<br>{local.text.req_title} {header1_error}</td>
+	</tr>
+	<tr>
+		<td valign=top align="left" class=b>{global.label.admin_description}: </td>
+	</tr>
+	<tr>
+		<td valign=top align="left">{rus_description}<br>{local.text.req_title} {descr1_error}</td>
+	</tr>
+
+
+	<tr>
+		<td valign=top align="center" class=b><br><br>{global.label.admin_eng_version}: </td>
+	</tr>
+
+	<tr>
+		<td valign=top align="left" class=b>{global.label.admin_header}: </td>
+	</tr>
+	<tr>
+		<td valign=top align="left">{eng_header}<br>{local.text.req_desc} {header2_error}</td>
+	</tr>
+	<tr>
+		<td valign=top align="left" class=b>{global.label.admin_description}: </td>
+	</tr>
+	<tr>
+		<td valign=top align=left>{eng_description}<br>{local.text.req_title} {descr2_error}</td>
+	</tr>
+
+	<tr valign=top>
+		<td colspan=3 align=center valign=middle height=40>
+			<input class=button type=reset value=":: {global.button.admin_bt_clear}" style="width:160px;">&nbsp;<input class=button type=submit name=submit style="width:190px;" value=":: {global.button.admin_bt_save}">
+		</td>
+	</tr>
+</table>
+{formEnd:static}
+

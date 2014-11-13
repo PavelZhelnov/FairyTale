@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+ * FCKeditor - The text editor for internet
+ * Copyright (C) 2003-2004 Frederico Caldeira Knabben
+ * 
+ * Licensed under the terms of the GNU Lesser General Public License:
+ * 		http://www.opensource.org/licenses/lgpl-license.php
+ * 
+ * For further information visit:
+ * 		http://www.fckeditor.net/
+ * 
+ * File Name: fckstyles.xml
+ * 	This is the sample style definitions file. It makes the styles combo
+ * 	completely customizable.
+ * 	See FCKConfig.StylesXmlPath in the configuration file.
+ * 
+ * Version:  2.0 RC3
+ * Modified: 2005-02-09 13:51:09
+ * 
+ * File Authors:
+ * 		Frederico Caldeira Knabben (fredck@fckeditor.net)
+-->
+<Styles>
+	<Style name="Headline" element="el">
+		<Attribute name="size" value="3" />
+		<Attribute name="color" value="#FF0000" />
+	</Style>
+	<Style name="Custom Text" element="span">
+		<Attribute name="style" value="font-weight: bold;" />
+		<Attribute name="color" value="#000000" />
+		<Attribute name="font-size" value="8px" />
+	</Style>
+	<Style name="MainText" element="span">
+		<Attribute name="class" value="maintext" />
+	</Style>
+
+	<Style name="Image on Right" element="img">
+		<Attribute name="style" value="padding: 5px; margin-left: 5px" />
+		<Attribute name="border" value="2" />
+		<Attribute name="align" value="right" />
+	</Style>
+	<Style name="Code" element="span">
+		<Attribute name="class" value="Code" />
+	</Style>
+	<Style name="Custom Ruler" element="hr">
+		<Attribute name="size" value="1" />
+		<Attribute name="color" value="#ff0000" />
+	</Style>
+</Styles>

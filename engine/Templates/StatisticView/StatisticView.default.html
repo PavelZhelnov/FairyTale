@@ -1,0 +1,91 @@
+<center><span class="headline">Statistic</span></center>
+<table border="1" width="190" align="center" cellpadding="1" cellspacing="3">
+	<tr bgcolor="#EEEEEE">
+		<td><b>{tasks} Urgent Matters</b></td>
+		<td>&nbsp;</td>
+	</tr>
+
+	<!-- BEGIN duetasks -->
+
+	<tr>
+		<td>{name}</td>
+		<td>{qty}</td>
+	</tr>
+	<!-- END duetasks -->
+
+	<!-- BEGIN overduetasks -->
+
+	<tr>
+		<td>{name}</td>
+		<td>{qty}</td>
+	</tr>
+	<!-- END overduetasks -->
+
+	<!-- BEGIN notes -->
+
+	<tr>
+		<td>{name}</td>
+		<td>{qty}</td>
+	</tr>
+	<!-- END notes -->
+
+	<tr>
+		<td><b>Total:</b></td>
+		<td>{tasks}</td>
+	</tr>
+
+	<tr bgcolor="#EEEEEE">
+		<td><b>{properties} Properties</b></td>
+		<td><a href="{homePath:static}/ListingAgent/AddListing/">+</a></td>
+	</tr>
+
+	<!-- BEGIN statuses -->
+
+	<tr>
+		<td>{name}</td>
+		<td>{qty}</td>
+	</tr>
+	<!-- END statuses -->
+	<tr>
+		<td><b>Total:</b></td>
+		<td>{properties}</td>
+	</tr>
+
+
+	<tr bgcolor="#EEEEEE">
+		<td><b>{bpo} MLS properties</b></td>
+		<td><a href="{homePath:static}/ListingAgent/AddListing/">+</a></td>
+	</tr>
+
+	<!-- BEGIN mlss -->
+
+	<tr>
+		<td>{name}</td>
+		<td>{qty}</td>
+	</tr>
+	<!-- END mlss -->
+	<tr>
+		<td><b>Total:</b></td>
+		<td>{bpo}</td>
+	</tr>
+
+	
+	
+	<tr bgcolor="#EEEEEE">
+		<td><b>{people} People</b></td>
+		<td><a href="{homePath:static}/Register/AddProprietor/">+</a></td>
+	</tr>
+
+	<!-- BEGIN peoples -->
+
+	<tr>
+		<td>{name}</td>
+		<td>{qty}</td>
+	</tr>
+	<!-- END peoples -->
+	<tr>
+		<td><b>Total:</b></td>
+		<td>{people}</td>
+	</tr>
+
+</table>

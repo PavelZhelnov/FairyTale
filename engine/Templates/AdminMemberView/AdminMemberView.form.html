@@ -1,0 +1,56 @@
+<form method=POST action="" enctype="multipart/form-data">
+<input type=hidden name="o" value="AdminMemberView">
+<input type=hidden name="step" value="register">
+{id}
+<table border=0 cellpadding=2 cellspacing=0 width="70%">
+	<tr>
+		<td colspan="2" valign=top align="center"><span class="headline" align="center">User registration form...</span> <br>
+		<center>{header_error}</center><br>
+		<center>{model_error}</center><br>
+		</td>
+	</tr>
+	<tr>
+		<td align="right" >Active user: </td>
+		<td width="250"><input type="hidden" name="form[activated]" value="0">{activated}</td>
+	</tr>
+
+	<tr>
+		<td align="right" >First Name : </td>
+		<td width="250">{first_name}</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">{first_name_error}</td>
+	</tr>
+	<tr>
+		<td align="right">Last Name : </td>
+		<td>{last_name}</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">{last_name_error}</td>
+	</tr>
+	<tr>
+		<td align="right">Login : </td>
+		<td>{login}</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">{login_error}</td>
+	</tr>
+	<tr>
+		<td align="right">Email Address : </td>
+		<td>{email}</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">{email_error}</td>
+	</tr>
+	<tr>
+		<td align="right">Company : </td>
+		<td>{company}</td>
+	</tr>
+
+	<tr valign=top>
+		<td colspan="2" align="right" valign=middle height=40>
+  			<input type="submit" value="{global.button.admin_bt_next}">
+		</td>
+	</tr>
+</table>
+{formEnd:static}

@@ -1,0 +1,143 @@
+
+<script language="javascript">
+
+	function eraseRequest(target, val) {leftS:static}
+		if (target.value==val) {leftS:static}
+			target.value = "";
+		{rightS:static}
+	{rightS:static}
+	function submitAllRequest() {leftS:static}
+		eraseRequest(document.forms['onlinerequest'].elements['form[contactname]'],'{global.label.contact_person}');
+		eraseRequest(document.forms['onlinerequest'].elements['form[company]'],'{global.label.contact_company}');
+		eraseRequest(document.forms['onlinerequest'].elements['form[phone]'],'{global.label.contact_phone}');
+		eraseRequest(document.forms['onlinerequest'].elements['form[email]'],'{global.label.contact_email}');
+		eraseRequest(document.forms['onlinerequest'].elements['form[cargoinfo]'],'{global.label.cargo_name}');
+		eraseRequest(document.forms['onlinerequest'].elements['form[containersize]'],'{global.label.container_size}');
+		eraseRequest(document.forms['onlinerequest'].elements['form[cargoweight]'],'{global.label.cargo_weight}');
+		eraseRequest(document.forms['onlinerequest'].elements['form[containerqty]'],'{global.label.container_qty}');
+		
+		document.forms['onlinerequest'].submit;
+	{rightS:static}
+
+	function showRequest(target,val) {leftS:static}
+		if (target.value=="") {leftS:static}
+			target.value = val;
+		{rightS:static}
+	{rightS:static}
+
+</script>
+
+<table border=0 cellpadding=0 cellspacing=0 width="100%" align="center">
+	<tr>
+		<td>
+			<span class="mainheader">{global.header.onlinerequest}</span><br><br>
+			{text}
+		</td>
+	</tr>
+</table>
+<br>
+<form method=POST action="" enctype="multipart/form-data" name="onlinerequest">
+<input type=hidden name="o" value="ThingsView">
+<input type=hidden name="step" value="sendonlinerequest">
+
+<table border="0" width="100%" align="center">
+	<tr>
+		<td align="center"><span class="error">{header_error}</span></td>
+	
+	<tr>
+		<td align=left height=25 valign=middle >
+			<span align="center" class="sub_mainheader_bold">{global.label.client_info}</span>
+		</td>
+	</tr>
+	
+	<tr>
+		<td>{contactname}</td>
+	</tr>
+	<tr>
+		<td ><span class="error">{contactname_error}</span></td>
+	</tr>
+	<tr>
+		<td>{company}</td>
+	</tr>
+	<tr>
+		<td><span class="error">{company_error}</span></td>
+	</tr>
+	<tr>
+		<td>{country}</td>
+	</tr>
+	<tr>
+		<td><span class="error">{country_error}</span></td>
+	</tr>	
+	<tr>
+		<td>{phone}</td>
+	</tr>
+	<tr>
+		<td><span class="error">{phone_error}</span></td>
+	</tr>		
+	<tr>
+		<td>{email}</td>
+	</tr>
+	<tr>
+		<td><span class="error">{email_error}</span></td>
+	</tr>	
+	
+	
+	<tr>
+		<td align=left height=25 valign=middle colspan="2">
+			<span align="center" class="sub_mainheader_bold">{global.label.cargo_info}</span>
+		</td>
+	</tr>
+	<tr>
+		<td height=30>{cargoinfo}</td>
+	</tr>
+	
+	<tr>
+		<td height=30>{containersize}</td>
+	</tr>
+	<tr>
+		<td height=30>{containertype}</td>
+	</tr>
+	<tr>
+		<td height=30>{cargoweight}</td>
+	</tr>
+	<tr>
+		<td height=30>{containerqty}</td>
+	</tr>
+	
+	<tr>
+ 		<td align=left height=25 valign=middle colspan="2">
+ 			<br><span align="center" class="sub_mainheader_bold">{global.label.transportation_direction}</span>
+ 		</td>
+ 	</tr>
+
+ 	<tr>
+ 		<td height=30>{sourcecity}</td>
+ 	</tr>
+ 	<tr>
+ 		<td height=30>{sourcecountry}</td>
+ 	</tr>
+ 	<tr>
+ 		<td height=30>{destinationcity}</td>
+ 	</tr>
+ 	<tr>
+ 		<td height=30>{destinationcountry}</td>
+ 	</tr>
+
+	<tr>
+ 		<td align=left height=25 valign=middle colspan="2">
+ 			<br><span align="center" class="sub_mainheader_bold">{global.label.additional_info}</span>
+ 		</td>
+ 	</tr>
+ 	<tr>
+ 		<td height=30>{additionalinfo}</td>
+ 	</tr>
+
+	
+	<tr valign=top>
+		<td colspan="2" align=left valign=middle height=40>
+			<img src="{picPath:static}/elements/pointer_right.gif" border=0>&nbsp;&nbsp;<input class=button type="submit" name="submit" style="width:80px;" value="{global.button.admin_bt_send}">
+		</td>
+	</tr>
+	
+</table>
+

@@ -1,0 +1,33 @@
+<html>
+<head><title> :: Administration Area :: </title>
+<link rel="stylesheet" href="{rootPath:static}/css/style.css">
+</head>
+<body marginheight=0 marginwidth=0 leftmargin=0 topmargin=0>
+<form method="POST" action="{formaction}" name="auth">
+<table border=0 cellspacing=0 cellpadding=0 width=460 align=center>
+	<tr>
+		<td height=415 align=center valign=middle>
+		{header_error}<p>
+		<table width="490" border="1" align=center cellpadding=0 cellspacing=0>
+		<tr>
+			<td width="478" valign=top align=center >
+			<table border=0 cellpadding=3 cellSpacing=3 width="448" align=center>
+					<tr><td align=center colspan=2 height=45 class=first>{global.label.admin_area}</td></tr>
+					<tr><td valign=middle width=448 align=center colspan=2><b>{model_error}</b></td></tr>
+					<tr><td valign=top width=150 align=right height=35><b>{global.label.admin_username}: </b></td><td valign=top width=298>{login} {login_error}</td></tr>
+					<tr><td valign=top width=150 align=right height=35><b>{global.label.admin_password}: </b></td><td valign=top width=298>{passw} {passw_error}</td></tr>
+					<tr><td align=center colspan=2 height=45>
+						<input type=hidden name="step" value="auth">{hidden}
+						<input value="{global.button.admin_bt_clear}" name="Reset" type=reset class=button>&nbsp;<input value="{global.button.admin_bt_enter}" name="form[submit]" type=submit class=button style="width:130px;">
+						</td>
+					</tr>
+			</table>
+			</td>
+		</tr>
+		</table>
+		</td>
+	</tr>
+</table>
+{formEnd:static}
+</body>
+</html>

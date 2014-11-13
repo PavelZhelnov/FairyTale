@@ -1,0 +1,136 @@
+<br>
+<table width="490" border="0" align=center cellpadding=0 cellspacing=0 bgcolor="#F8F8F8">
+	<tr>
+		<td height="6" width=6><img src="{picPath:static}/box/01.gif"></td>
+		<td width="478" height="6"><img src="{picPath:static}/box/02.gif" height=6 width=478></td>
+		<td height="6" width=6><img src="{picPath:static}/box/03.gif"></td>
+	</tr>
+	<tr>
+		<td width="6" background="{picPath:static}/box/08.gif"><img src="{picPath:static}/1.gif" width=6></td>
+		<td width="478" valign=top align=center>
+			Language Manager
+		</td>
+		<td width="6" background="{picPath:static}/box/04.gif"><img src="{picPath:static}/1.gif" width=6></td>
+	</tr>
+	<tr>
+		<td height="6" valign=top><img src="{picPath:static}/box/07.gif"></td>
+		<td width="478" height="6"><img src="{picPath:static}/box/06.gif" height=6 width=478></td>
+		<td height="6" valign=top><img src="{picPath:static}/box/05.gif"></td>
+	</tr>
+</table>
+<br>
+<form method="POST" action="" name="search">
+<input type=hidden name="step" value="search">
+<input type=hidden name="object" value="LanguageAdminView">
+
+<table width="490" border="0" align=center cellpadding=0 cellspacing=0 bgcolor="#F8F8F8">
+	<tr>
+		<td height="6" width=6><img src="{picPath:static}/box/01.gif"></td>
+		<td width="520" height="6"><img src="{picPath:static}/box/02.gif" height=6 width=520></td>
+		<td height="6" width=6><img src="{picPath:static}/box/03.gif"></td>
+	</tr>
+	<tr>
+		<td width="6" background="{picPath:static}/box/08.gif"><img src="{picPath:static}/1.gif" width=6></td>
+		<td width="478" valign=top align=center>
+			Search Filters: 
+			<table align="center" cellpadding="0" cellspacing="0" width="500" border="0">
+			<tr>
+				<td align="right">Var Name : &nbsp;</td><td align="left">{var}</td>
+				<td align="right">Item type : &nbsp;</td><td align="left">{type}</td>
+			</tr>
+			<tr>
+				<td align="right">Amount per page : &nbsp;</td><td align="left">{amount}</td>
+				<td align="right">Module name : &nbsp;</td><td align="left">{module}</td>
+			</tr>
+			<tr>
+				<td colspan="2" align=center height="40"><input value=":: Search !" name=Submit type=submit class=submit></td>
+				<td colspan="2" align="center"><input value=":: Clear Form" name="Reset" type=reset class=submit></td>
+			</tr>
+			</table>
+			<br>
+
+		</td>
+		<td width="6" background="{picPath:static}/box/04.gif"><img src="{picPath:static}/1.gif" width=6></td>
+	</tr>
+	<tr>
+		<td height="6" valign=top><img src="{picPath:static}/box/07.gif"></td>
+		<td width="520" height="6"><img src="{picPath:static}/box/06.gif" height=6 width=520></td>
+		<td height="6" valign=top><img src="{picPath:static}/box/05.gif"></td>
+	</tr>
+</table>
+
+{formEnd:static}
+<br>
+
+<center><b><a href="{homePath:static}/Admin/LanguageAdmin/">View modules</a></b></center>
+<p>
+
+
+
+<table width="490" border="0" align=center cellpadding=0 cellspacing=0 bgcolor="#F8F8F8">
+	<tr>
+		<td height="6" width=6><img src="{picPath:static}/box/01.gif"></td>
+		<td width="530" height="6"><img src="{picPath:static}/box/02.gif" height=6 width=530></td>
+		<td height="6" width=6><img src="{picPath:static}/box/03.gif"></td>
+	</tr>
+	<tr>
+		<td width="6" background="{picPath:static}/box/08.gif"><img src="{picPath:static}/1.gif" width=6></td>
+		<td width="478" valign=top align=center>
+
+<table border=0 cellspacing=0 cellpadding=0 width=520 align=center>
+	<tr><td align=center colspan=5>{navbar}</td></tr>
+	<!-- BEGIN pagecontrol --><tr>
+		<td align=center width="10%" class=first>{prev}</td>
+		<td align=center width="10%" class=first>{first}</td>
+		<td align=center width="60%" class=first>{pager}</td>
+		<td align=center width="10%" class=first>{last}</td>
+		<td align=center width="10%" class=first>{next}</td>
+	</tr><!-- END pagecontrol -->
+</table>
+<p>
+<table border=0 cellpadding=0 cellspacing=0 width=530>
+	<tr><td width="518" height="5" bgcolor="#DDDDDD" colspan=6><img src="{picPath:static}/1.gif" height=5 width=518></td></tr>
+	<tr>
+		<td width="5" bgcolor="#DDDDDD"><img src="{picPath:static}/1.gif" height=1 width=5></td>
+		<td width="80" height=25 bgcolor="#DDDDDD" class=b align=left>ID</td>
+		<td width="120" height=25 bgcolor="#DDDDDD" class=panel align=left>Content Type</td>
+		<td width="140" height=25 bgcolor="#DDDDDD" class=panel align=left>Module Name</td>
+		<td width="158" height=25 bgcolor="#DDDDDD" class=b align=center>Variable</td>
+		<td width="5" bgcolor="#DDDDDD"><img src="{picPath:static}/1.gif" height=1 width=5></td>
+	</tr>
+
+	<!-- BEGIN items -->
+	<tr><td width="518" height="5" bgcolor="{bgcolor}" colspan=6><img src="{picPath:static}/1.gif" height=5 width=518></td></tr>
+	<tr>
+		<td width="5" bgcolor="{bgcolor}"><img src="{picPath:static}/1.gif" height=1 width=5></td>
+		<td width="80" height=25 bgcolor="{bgcolor}" class=b align=left>{id}</td>
+		<td width="120" height=25 bgcolor="{bgcolor}" class=panel align=left>{type}</td>
+		<td width="140" height=25 bgcolor="{bgcolor}" class=panel align=left>{module}</td>
+		<td width="158" height=25 bgcolor="{bgcolor}" class=b align=center>{name}</td>
+		<td width="5" bgcolor="{bgcolor}"><img src="{picPath:static}/1.gif" height=1 width=5></td>
+	</tr>
+	<!-- END items -->
+</table>
+<br>
+<table border=0 cellspacing=0 cellpadding=0 width=520 align=center>
+	<!-- BEGIN pagecontrol2 --><tr>
+		<td align=center width="10%" class=first>{prev}</td>
+		<td align=center width="10%" class=first>{first}</td>
+		<td align=center width="60%" class=first>{pager}</td>
+		<td align=center width="10%" class=first>{last}</td>
+		<td align=center width="10%" class=first>{next}</td>
+	</tr><!-- END pagecontrol2 -->
+</table>
+
+		</td>
+		<td width="6" background="{picPath:static}/box/04.gif"><img src="{picPath:static}/1.gif" width=6></td>
+	</tr>
+	<tr>
+		<td height="6" valign=top><img src="{picPath:static}/box/07.gif"></td>
+		<td width="530" height="6"><img src="{picPath:static}/box/06.gif" height=6 width=530></td>
+		<td height="6" valign=top><img src="{picPath:static}/box/05.gif"></td>
+	</tr>
+</table>
+
+
+

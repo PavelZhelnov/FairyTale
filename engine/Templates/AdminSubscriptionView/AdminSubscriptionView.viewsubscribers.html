@@ -1,0 +1,81 @@
+<span class="headline" align="center">{global.header.head_subscription}</span>
+<br><br>
+<span class="headlinesmall" align="center"> 
+{global.button.admin_bt_viewmail}, {global.label.category} : {categoryname}<br>
+<a class="menuitem" href="{homePath:static}/Admin/AdminSubscription/ViewSubscribers/">{global.label.admin_viewallsubscribers}</a>
+</span>
+
+
+<table width="100%" border="0" align=center cellpadding=0 cellspacing=0>
+	<tr>		
+		<td width="100%" valign=top align=center>
+		<table border=0 cellspacing=0 cellpadding=0 align=center>
+			<tr><td align=center colspan=5 height=32>{navbar}</td></tr>
+			<!-- BEGIN pagecontrol --><tr>
+				<td align=center width="10%" class="menuitem" height=30>{prev}</td>
+				<td align=center width="10%" class="menuitem">{first}</td>
+				<td align=center width="60%" class="menuitem">{pager}</td>
+				<td align=center width="10%" class="menuitem">{last}</td>
+				<td align=center width="10%" class="menuitem">{next}</td>
+			</tr><!-- END pagecontrol -->
+		</table>
+		</td>		
+	</tr>
+</table>
+<br>
+
+<table border="0" align=center width=600>
+<tr>
+	<td>{global.label.email}</td><td>{global.label.subscription_confirmed}</td><td>{global.label.subscription_date}</td>
+</tr>
+<!-- BEGIN subscriber -->
+	<tr>
+		<td cliss=first width="400" bgcolor="#DFDFDF">
+			<span class="menuitem">{subscriberlink}</span> ( <a class="menuitem" href="{homePath:static}/Admin/AdminSubscription/EditSubscriber/{subscriberid}">{global.button.admin_bt_edit}</a> / <a class="menuitem" href="{homePath:static}/Admin/AdminSubscription/DeleteSubscriber/{subscriberid}">{global.button.admin_bt_delete}</a>)
+		</td>
+		<td cliss=first width="100" bgcolor="#DFDFDF">{confirmed}</td>
+		<td cliss=first width="100" bgcolor="#DFDFDF">{subscribedate}</td>
+	</tr>
+
+<!-- END subscriber -->
+</table>
+
+<br><br>
+<span class="headline" align="center">{global.button.admin_bt_add}</span>
+<br><br>
+
+<form method="POST" action="" name="subscribe">
+<input type=hidden name="o" value="AdminSubscriptionView">
+<input type=hidden name="step" value="AddSubscriber">{categoryidsub}
+<!-- BEGIN menu --><table border="0" width="100%" align=center cellpadding=0 cellspacing=0>
+	<!-- BEGIN header --><tr>
+		<td class=first width="{catwidth}"><img src="{picPath:static}/1.gif" height=1 width={catwidth}></td>
+		<td class=first width="500">
+			{catcheck}{catname}
+		</td>			
+	</tr>
+	<!-- END header -->
+	<tr>
+		<td class=first width="{catwidth}"><img src="{picPath:static}/1.gif" height=1 width={catwidth}></td>
+		<td valign=top align=center colspan="2">
+		<!-- BEGIN category -->
+		<table border=0 cellpadding=0 cellspacing=0 align=center>		
+			<tr>
+			<td class=first width="{catwidth}"><img src="{picPath:static}/1.gif" height=1 width={catwidth}></td>
+			<td align=left valign=middle class=b width={catwidth2}>
+				{catcheck}{catname}
+		</table><!-- END category -->
+		</td>
+	</tr>
+</table>
+<!-- END menu -->
+{category_error}
+<br>
+{email_format1}
+{email_format2}
+<br><br>
+<b>{global.label.email}: </b> {email} {email_error}
+<br><br>
+
+<input value="{global.button.admin_bt_clear}" name="Reset" type=reset class=button>&nbsp;<input value="{global.button.admin_bt_subscribe}" name="form[submit]" type=submit class=button style="width:130px;">
+{formEnd:static}

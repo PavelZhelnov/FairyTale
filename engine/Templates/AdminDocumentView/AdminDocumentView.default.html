@@ -1,0 +1,116 @@
+<script language="javascript" src="{rootPath:static}/scripts/listmenu.js"></script>
+<table border=0 width="795" cellpadding="0" cellspacing="0">
+<tr><td align="center">
+	<center><span class="headline">Admin Documents Information List</span></center>
+</td></tr>
+</table>
+
+<table width="850" border=0 cellpadding="0" cellspacing="0" align="center">
+<tr><td align="center">
+	<br>
+	<table border=1 align="center" cellpadding="0" cellspacing="0">
+		<tr class="listheader">
+			<td align="center" width="5%" ><b>Act.</b></td>
+			<td align="center" width="5%"><b>#</b></td>
+			<td align="center" height="30" width="20%"><b>File Name</b></td>
+			<td align="center" width="10%" ><b>Type</b></td>
+			<td align="center" width="30%" ><b>Name</b></td>
+			<td align="center" width="10%"><b>Date</b></td>
+			<td align="center" width="10%"><b>Size</b></td>
+		</tr>
+		<!-- BEGIN documents -->
+		<tr bgcolor="{color}">
+			<td class="contPanel" id="panel">
+				<img src="{picPath:static}/buttons/more.gif" name="1" align="left" border="0" alt="Action ..." onmouseover="move_cp('CtrlPanel',this, '{id}')">
+			</td>
+			<td>{num}</td>
+			<td>{file_name}&nbsp;</td>
+			<td>{doctype}&nbsp;</td>
+			<td>{name}&nbsp;</td>
+			<td>{pubdate}&nbsp;</td>
+			<td>{size}&nbsp;</td>
+		</tr>
+		<!-- END documents -->
+	</table>
+
+</td></tr>
+
+</table>
+
+
+<form method=POST action="{homePath:static}/Admin/AdminDocument/" enctype="multipart/form-data">
+<input type=hidden name="o" value="AdminDocumentView">
+<input type=hidden name="step" value="add_document">
+{item_langs1}{item_langs2}{item_langs3}
+<table width="490" border="0" align=center cellpadding=0 cellspacing=0 bgcolor="#F8F8F8">
+	<tr>
+		<td align=center colspan="2"><b>New document:</b><br> </td>
+	</tr>
+	<tr>
+		<td width=120 valign=top align=right class=b>File name: </td>
+		<td width=346 valign=top align=left>{document} <br>{document_error}</td>
+	</tr>
+	<tr>
+		<td colspan="2" valign=top class=b><hr width="50%" align=center"></td>
+	</tr>
+	<tr>
+		<td colspan="2" valign=top align=left class=b>Русская версия: </td>
+	</tr>
+	<tr>
+		<td valign=top align=right>Название документа: </td>
+		<td valign=top align=left>{rus_name} </td>
+	</tr>
+	<tr>
+		<td valign=top align=right>Описание: </td>
+		<td valign=top align=left>{rus_description} </td>
+	</tr>
+	
+	<tr>
+		<td colspan="2" valign=top class=b><hr width="50%" align=center"></td>
+	</tr>
+	<tr>
+		<td colspan="2" valign=top align=left class=b>Українська версія: </td>
+	</tr>
+	<tr>
+		<td valign=top align=right>Назва документа: </td>
+		<td valign=top align=left>{ukr_name} </td>
+	</tr>
+	<tr>
+		<td valign=top align=right>Опис: </td>
+		<td valign=top align=left>{ukr_description} </td>
+	</tr>
+
+	<tr>
+		<td colspan="2" valign=top class=b><hr width="50%" align=center"></td>
+	</tr>
+	<tr>
+		<td colspan="2" valign=top align=left class=b>Enlgish: </td>
+	</tr>
+	<tr>
+		<td valign=top align=right>Name of document: </td>
+		<td valign=top align=left>{eng_name} </td>
+	</tr>
+	<tr>
+		<td valign=top align=right>Description: </td>
+		<td valign=top align=left>{eng_description} </td>
+	</tr>
+
+	<tr valign=top>
+		<td colspan=2 align=center valign=middle height=40>
+			<input class=button type=reset value="Clear" style="width:160px;">&nbsp;<input class=button type=submit name=submit style="width:220px;" value="Add document">
+		</td>
+	</tr>
+</table>
+{formEnd:static}
+
+
+<table border="0" cellspacing=0 cellpadding=0 id="CtrlPanel" class="contPanel">
+  <tr valign="middle" >
+    <td>
+      <img src="{picPath:static}/buttons/less.gif" alt="Hide buttons" onclick='setTimeout("hidePanel()", 300);'>
+    </td>
+    <td>
+		<a href="javascript:document.getElementById('CtrlPanel').style.visibility='hidden';submitAction('{homePath:static}/Admin/AdminDocument/Delete/*1/')"><img src="{picPath:static}/buttons/smdelete.jpg" border=0></a>
+    </td>
+  </tr>
+</table>

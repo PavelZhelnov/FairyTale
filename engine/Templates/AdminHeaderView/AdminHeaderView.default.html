@@ -1,0 +1,36 @@
+<form method=POST action="" enctype="multipart/form-data" name="header">
+<input type=hidden name="o" value="AdminHeaderView">
+<input type=hidden name="step" value="save">
+
+<table border=1 align="center" width="800">
+<tr>
+	<td valign=top align="center"><span class="headline" align="center">{global.button.admin_bt_header}</span> <br></td>
+</tr>
+<tr>
+	<td>
+		{global.text.admin_header_instruction}
+	</td>
+</tr>
+<tr>
+ 	<td align="center">
+		{headerimage}
+	</td>
+</tr>
+<tr>
+	<td align="center">
+		{image}
+	</td>
+</tr>
+<tr>
+	<td align="center">
+		{image_error}
+	</td>
+</tr>
+<tr>
+	<td align="center">
+		<input type="submit" value="Change Header">
+	</td>
+</tr>
+</table>
+
+{formEnd:static}

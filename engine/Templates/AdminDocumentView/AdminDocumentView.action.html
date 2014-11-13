@@ -1,0 +1,341 @@
+<script language="javascript" src="{rootPath:static}/scripts/datetimepicker.js"></script>
+
+<form method=POST action="{formaction}" enctype="multipart/form-data" name="bpo">
+<input type=hidden name="o" value="AdminBpoView">
+<input type=hidden name="step" value="{action}">
+<input type="hidden" name="form[id]" value="{id}">
+{item_langs1}{item_langs2}{property}{dialog}
+
+<table border=0 cellpadding=3 cellspacing=2 width="780" align="center">
+<tr>
+	<td colspan="2" valign=top align="center">
+		<a href="{homePath:static}/Admin/AdminBpo/">Return to the list</a>&nbsp;&nbsp;
+		<a href="{homePath:static}/Admin/AdminBpo/Delete/{id}">Delete</a>&nbsp;&nbsp;
+		<a href="{homePath:static}/Admin/AdminBpo/AddTask//{id}">Add Task</a>&nbsp;&nbsp;
+		<a href="{homePath:static}/Admin/AdminBpo/ViewTasksByBPO/{id}">View Tasks</a>&nbsp;&nbsp;
+		<a href="{homePath:static}/Admin/AdminBpo/Add/">Add new BPO</a> &nbsp;&nbsp;
+		<a href="{homePath:static}/Admin/AdminBpo/ViewMy/">View My BPOs</a> &nbsp;&nbsp;
+		<a href="javascript:void(0);" onclick="window.close();">Close</a> &nbsp;&nbsp;
+	</td>
+</tr>
+
+<tr>
+	<td colspan="2" valign=top align="center"><span class="headline" align="center">BPO For Property :&nbsp;</span> <br></td>
+</tr>
+<tr>
+	<td colspan="2">
+		<table border=0 cellpadding="2" cellspacing="0" align="center">
+		<tr>
+			<td colspan="2" bgcolor="#eeeeee">Property Details :</td><td colspan="2" bgcolor="#EEEEEE">Selling Agent Details</td>
+		</tr>
+
+		<tr>
+			<td width="150">Address :</td><td width="150">{address}</td><td width="150">First Name</td><td width="150">{agent_first_name}</td>
+		</tr>
+		<tr>
+			<td>City :</td><td>{city}</td><td>Last Name</td><td>{agent_last_name}</td>
+		</tr>
+		<tr>
+			<td>State :</td><td>{state}</td><td>Company</td><td>{agent_company}</td>
+		</tr>
+
+		<tr>
+			<td>List Price :</td><td>$ {price}</td><td>Email</td><td><a href="mailto:{agent_email}">{agent_email}</a></td>
+		</tr>
+		</table>
+</tr>
+<tr>
+	<td align="center"><span class="error">{header_error}</span></td>
+</tr>
+</table>
+
+<table border=0 cellpadding=3 cellspacing=2 width="750" align="center">
+<tr bgcolor="#EEEEEE">
+	<td colspan="2" align="center">BPO Details</td>
+</tr>
+<tr>
+	<td width="350" valign="top">
+		<table border=0 cellpadding=3 cellspacing=2 align="center">
+			<tr>
+				<td align="right" width="150" >BPO type: </td>
+				<td width="150">{bpo_type}</td>
+				<td width="50"><img src="{picPath:static}/elements/required.jpg" border=0></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center">{bpo_type_error}</td>
+			</tr>
+			<tr>
+				<td align="right">BPO status: </td>
+				<td>{bpo_status}</td>
+				<td><img src="{picPath:static}/elements/required.jpg" border=0></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center">{bpo_status_error}</td>
+			</tr>
+			<tr>
+				<td align="right" >Ordered By : </td>
+				<td>{ordered_by}{ordered_by_id}</td>
+				<td><img src="{picPath:static}/elements/required.jpg" border=0></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center">{ordered_by_error}</td>
+			</tr>
+			<tr>
+				<td align="right" >Property : </td>
+				<td>{case_number}{property_field}</td>
+				<td><a href="javascript:void(0);" onClick="javascript:window.open('{homePath:static}/list/propertylist/open/{property_id}/assign_property/bpo/form[property][id]/','_blank','scrollbars=yes,resizable=no,status=yes,width=850,height=590')"><img src="{picPath:static}/buttons/zoom.gif" border="0" alt="Select Property" hspace="0" vspace="0" ></a></td>
+			</tr>
+			<tr>
+				<td align="right" >Asset Manager : </td>
+				<td>{asset_manager}{asset_manager_field}</td>
+				<td><a href="javascript:void(0);" onClick="javascript:window.open('{homePath:static}/list/contactlist/open/{asset_manager_id}/assign_asset_manager/bpo/form[asset_manager][id]//!3/','_blank','scrollbars=yes,resizable=no,status=yes,width=850,height=590')"><img src="{picPath:static}/buttons/zoom.gif" border="0" alt="Select Asset manager" hspace="0" vspace="0" ></a></td>
+			</tr>
+		</table>
+	</td>
+	<td width="400" valign="top">
+		<table border=0 cellpadding=3 cellspacing=2 align="center">
+			<tr>
+				<td align="right" width="250"><b>Insurable : </b></td>
+				<td width="135"><input type="hidden" value="0" name="form[insurable]">{insurable}</td>
+				<td width="15"></td>
+			</tr>
+			<tr>
+				<td align="right"><b>Historical Preservation Area : </b></td>
+				<td><input type="hidden" value="0" name="form[historical_preservation_area]">{historical_preservation_area}</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td align="right" ><b>Airpor Runway Zone : </b></td>
+				<td ><input type="hidden" value="0" name="form[airpor_runway_zone]">{airpor_runway_zone}</td>
+				<td ></td>
+			</tr>
+			<tr>
+				<td align="right" ><b>Flood Zone : </b></td>
+				<td ><input type="hidden" value="0" name="form[flood_zone]">{flood_zone}</td>
+				<td ></td>
+			</tr>
+			<tr>
+				<td align="right" >Contact Person : </td>
+				<td>{contact_person}{contact_person_field}</td>
+				<td><a href="javascript:void(0);" onClick="javascript:window.open('{homePath:static}/list/contactlist/open/{contact_person_id}/assign_contact_person/bpo/form[contact_person][id]//!3/','_blank','scrollbars=yes,resizable=no,status=yes,width=850,height=590')"><img src="{picPath:static}/buttons/zoom.gif" border="0" alt="Select Contact Person" hspace="0" vspace="0" ></a></td>
+			</tr>
+
+		</table>
+	</td>
+</tr>
+
+
+<tr bgcolor="#EEEEEE">
+	<td colspan="2" align="center">BPO Address</td>
+</tr>
+<tr>
+	<td width="350" valign="top">
+		<table border=0 cellpadding=3 cellspacing=2 align="center">
+			<tr>
+				<td align="right" width="150" >BPO case number: </td>
+				<td width="150">{bpocase_number}</td>
+				<td width="50"></td>
+			</tr>
+			<tr>
+				<td align="right">BPO address: </td>
+				<td>{bpoaddress}</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td align="right">BPO zip: </td>
+				<td>{bpozip}</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td align="right" >City : </td>
+				<td>{bpocity}</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td align="right" >State : </td>
+				<td>{bpostate}</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td align="right" >County : </td>
+				<td>{bpocounty}</td>
+				<td></td>
+			</tr>
+		</table>
+	</td>
+	<td width="350" valign="top">
+		<table border=0 cellpadding=3 cellspacing=2 align="center">
+			<tr>
+				<td align="right" width="150" >Map Coordinates : </td>
+				<td width="150">{bpomap_coordinates}</td>
+				<td width="50"></td>
+			</tr>
+			<tr>
+				<td align="right">School District: </td>
+				<td>{bposchool_district}</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td align="right" >Subdivision : </td>
+				<td>{bposubdivision}</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td align="right" >Lockbox Code : </td>
+				<td>{bpolockbox_code}</td>
+				<td></td>
+			</tr>
+
+		</table>
+	</td>
+</tr>
+
+
+<tr bgcolor="#EEEEEE">
+	<td colspan="2" align="center">Vendor</td>
+</tr>
+<tr>
+	<td valign="top">
+		<table border=0 cellpadding=3 cellspacing=2 align="center">
+			<tr>
+				<td align="right" ><b>Valuation Company : </b></td>
+				<td>{valuation_company_field}{valuation_company}</td>
+				<td><a href="javascript:void(0);" onClick="javascript:window.open('{homePath:static}/list/contactlist/open/{valuation_company_id}/assign_valuation_company/bpo/form[valuation_company][id]//3//vs','_blank','scrollbars=yes,resizable=no,status=yes,width=850,height=590')"><img src="{picPath:static}/buttons/zoom.gif" border="0" alt="Select Valuation Company" hspace="0" vspace="0" ></a><img src="{picPath:static}/elements/required.jpg" border=0>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center">{valuation_company_error}</td>
+			</tr>
+			<tr>
+				<td align="right"><b>Vendor Invoice Number : </b></td>
+				<td>{vendor_invoice_number}</td>
+				<td></td>
+			</tr>
+		</table>
+	</td>
+	<td valign="top">
+		<table border=0 cellpadding=3 cellspacing=2 align="center">
+			<tr>
+				<td align="right"><b>Cost : </b></td>
+				<td>$ {cost}</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center">{cost_error}</td>
+			</tr>
+
+			<tr>
+				<td align="right"><b>Vendor Invoice Date : </b></td>
+				<td>{vendor_invoice_date}</td>
+				<td><a href="javascript:NewCal('vendor_invoice_date','mmddyyyy', true, 12);"><img src="{picPath:static}/buttons/date.png" border="0" name="idate" alt="Select Vendor Invoice Date" hspace="0" vspace="0" ></a></td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+<tr bgcolor="#EEEEEE">
+	<td colspan="2" align="center">Dates</td>
+</tr>
+<tr>
+	<td valign="top">
+		<table border=0 cellpadding=3 cellspacing=2 align="center">
+			<tr>
+				<td align="right"><b>Ordered : </b></td>
+				<td>{ordered}</td>
+				<td><a href="javascript:NewCal('ordered','mmddyyyy', true, 12);"><img src="{picPath:static}/buttons/date.png" border="0" name="idate" alt="Select Ordered Date" hspace="0" vspace="0" ></a></td>
+			</tr>
+			<tr>
+				<td align="right"><b>Received : </b></td>
+				<td>{received}</td>
+				<td><a href="javascript:NewCal('received','mmddyyyy', true, 12);"><img src="{picPath:static}/buttons/date.png" border="0" name="idate" alt="Select Received Date" hspace="0" vspace="0" ></a></td>
+			</tr>
+		</table>
+	</td>
+	<td valign="top">
+		<table border=0 cellpadding=3 cellspacing=2 align="center">
+			<tr>
+				<td align="right"><b>Reviewed : </b></td>
+				<td>{reviewed}</td>
+				<td><a href="javascript:NewCal('reviewed','mmddyyyy', true, 12);"><img src="{picPath:static}/buttons/date.png" border="0" name="idate" alt="Select Reviewed Date" hspace="0" vspace="0" ></a></td>
+			</tr>
+			<tr>
+				<td align="right" ><b>Due Date : </b></td>
+				<td>{due_date}</td>
+				<td><a href="javascript:NewCal('due_date','mmddyyyy', true, 12);"><img src="{picPath:static}/buttons/date.png" border="0" name="idate" alt="Select Due Date Date" hspace="0" vspace="0" ></a></td>
+			</tr>
+
+		</table>
+	</td>
+</tr>
+
+
+
+<tr bgcolor="#EEEEEE">
+	<td colspan="2" align="center">Values</td>
+</tr>
+<tr>
+	<td valign="top">
+		<table border=0 cellpadding=3 cellspacing=2 align="center">
+			<tr>
+				<td align="right"><b>Value As Is : </b></td>
+				<td>$ {value_as_is}</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">{value_as_is_error}</td>
+			</tr>
+
+			<tr>
+				<td align="right"><b>Cost of Repairs : </b></td>
+				<td>$ {cost_of_repairs}</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">{cost_of_repairs_error}</td>
+			</tr>
+
+		</table>
+	</td>
+	<td valign="top">
+		<table border=0 cellpadding=3 cellspacing=2 align="center">
+			<tr>
+				<td align="right"><b>Value Repaired : </b></td>
+				<td>$ {value_repaired}</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">{value_repaired_error}</td>
+			</tr>
+			<tr>
+				<td align="right"><b>Comments : </b></td>
+				<td>{comments}</td>
+			</tr>
+
+		</table>
+	</td>
+</tr>
+
+<tr>
+	<td colspan="2" align="center">
+		<input type="submit" value="{actionButton} BPO">
+	</td>
+</tr>
+</table>
+
+{formEnd:static}
+
+<SCRIPT language="javascript">
+document.onload = processMessages();
+
+function processMessages() {leftS:static}
+	form = document.forms.bpo;
+	dialog_index=form.elements['form[_dialog]'].value;
+	if (dialog_index>0) {leftS:static}
+		confirm_message = ' {dialog_message} ';
+		input_box=confirm(confirm_message);
+	    if (input_box==true) {leftS:static}
+       	form.submit();
+	    {rightS:static}
+	    else {leftS:static}
+       		form.elements['form[_dialog]'].value=0;
+    	{rightS:static}
+	{rightS:static}
+{rightS:static}
+</SCRIPT>

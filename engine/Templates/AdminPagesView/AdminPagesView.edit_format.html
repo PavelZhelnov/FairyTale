@@ -1,0 +1,83 @@
+<script type="text/javascript" src="{rootPath:static}/scripts/fckeditor/fckeditor.js"></script>
+
+<span class="headline" align="center">{global.label.admin_editing}: {pagename}</span>
+<form method=POST action="{formaction}" enctype="multipart/form-data">
+<input type=hidden name="o" value="AdminPagesView">
+<input type=hidden name="step" value="{action}">
+<input type="hidden" name="form[id]" value="{idn}">
+{item_langs1}{item_langs2}{item_langs3}
+<span class="error">{header_error}</span>
+<table border=1 cellpadding=2 cellspacing=0 width=668>
+	<tr>
+		<td valign=top align=left>{global.label.name} :</td>
+		<td valign=top align=left>{name} <span class="error">{name_error}</span> </td>
+	</tr>
+	<tr>
+		<td></td><td colspan="1" align="left">{global.label.constraints_contentpage}</td>
+	</tr>
+
+	<tr>
+		<td colspan="2">
+				<br><br><hr align=center width="50%"><br>Russian:
+		</td>
+	</tr>
+	<tr>
+		<td valign=top align=left>{global.label.header} :</td>
+		<td valign=top align=left>{rus_header} <span class="error">{rusheader_error}</span></td>
+	</tr>
+	
+	<tr>
+		<td colspan="2" valign=top align=left height="300"><br>{rtext}
+			<script type="text/javascript">
+			var oFCKeditor1 = new FCKeditor( 'rus_text' ) ;
+			oFCKeditor1.Value	= document.forms[0].elements['rtext'].value ;
+			oFCKeditor1.Create() ;
+			</script>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+				Ukrainian:
+		</td>
+	</tr>
+	<tr>
+		<td valign=top align=left>{global.label.header} :</td>
+		<td valign=top align=left>{ukr_header} <span class="error">{ukrheader_error}</span></td>
+	</tr>
+	
+	<tr>
+		<td colspan="2" valign=top align=left height="300"><br>{utext}
+			<script type="text/javascript">
+			var oFCKeditor2 = new FCKeditor( 'ukr_text' ) ;
+			oFCKeditor2.Value	= document.forms[0].elements['utext'].value ;
+			oFCKeditor2.Create() ;
+			</script>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+				English:
+		</td>
+	</tr>
+	<tr>
+		<td valign=top align=left>{global.label.header} :</td>
+		<td valign=top align=left>{eng_header} <span class="error">{engheader_error}</span></td>
+	</tr>
+	
+	<tr>
+		<td colspan="2" valign=top align=left height="300"><br>{etext}
+			<script type="text/javascript">
+			var oFCKeditor = new FCKeditor( 'eng_text' ) ;
+			oFCKeditor.Value	= document.forms[0].elements['etext'].value ;
+			oFCKeditor.Create() ;
+			</script>
+		</td>
+	</tr>
+	
+	<tr valign=top>
+		<td colspan="2" align=center valign=middle height=40>
+			<input class=button type=reset value="{global.button.admin_bt_clear}" style="width:160px;">&nbsp;<input class=button type=submit name=submit style="width:160px;" value="{actionbutton}">
+		</td>
+	</tr>
+</table>
+{formEnd:static}

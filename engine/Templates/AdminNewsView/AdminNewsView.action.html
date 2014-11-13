@@ -1,0 +1,55 @@
+<form method=POST action="{formaction}" enctype="multipart/form-data">
+<input type=hidden name="o" value="AdminNewsView">
+<input type=hidden name="step" value="{action}">
+<input type="hidden" name="form[id]" value="{id}">
+{item_langs1}{item_langs2}
+<span class="error">{header_error}</span>
+<table border=0 cellpadding=2 cellspacing=0 width=468>
+	<tr>
+		<td valign=top align="center"><span class="headline" align="center">{global.button.admin_bt_add}</span> </td>
+	</tr>
+
+	<tr class="contentlinebottom">
+		<td valign=top align="center" class=b>{global.label.admin_rus_version}: </td>
+	</tr>
+
+	<tr>
+		<td valign=top align="left" class=b>{global.label.admin_header}: </td>
+	</tr>
+	<tr>
+		<td valign=top align="left">{rus_header}<br>{local.text.req_title} <span class="error">{header1_error}</span></td>
+	</tr>
+	<tr>
+		<td valign=top align="left" class=b>{global.label.admin_description}: </td>
+	</tr>
+	<tr>
+		<td valign=top align="left">{rus_description}<br>{local.text.req_title} <span class="error">{descr1_error}</span></td>
+	</tr>
+
+
+	<tr class="contentlinebottom">
+		<td valign=top align="center" class=b>{global.label.admin_eng_version}: </td>
+	</tr>
+
+	<tr>
+		<td valign=top align="left" class=b>{global.label.admin_header}: </td>
+	</tr>
+	<tr>
+		<td valign=top align="left">{eng_header}<br>{local.text.req_desc} <span class="error">{header2_error}</span></td>
+	</tr>
+	<tr>
+		<td valign=top align="left" class=b>{global.label.admin_description}: </td>
+	</tr>
+	<tr>
+		<td valign=top align=left>{eng_description}<br>{local.text.req_title} <span class="error">{descr2_error}</span></td>
+	</tr>
+
+	<tr valign=top>
+		<td colspan=3 align=center valign=middle height=40>
+			<input class=button type=reset value="{global.button.admin_bt_clear}" style="width:160px;">&nbsp;<input class=button type=submit name=submit style="width:190px;" value="{actionbutton}">
+		</td>
+	</tr>
+</table>
+
+
+{formEnd:static}

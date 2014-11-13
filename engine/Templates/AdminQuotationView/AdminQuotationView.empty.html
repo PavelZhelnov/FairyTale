@@ -1,0 +1,41 @@
+<span class="headline" align="center">{global.header.head_quotations}</span>
+
+<br><br>
+<table border="0" width="100%" align="center">
+	<tr>
+		<td align=left height=25 valign=middle>
+			<center><span align="center" class="headlinesmall">{global.header.head_quotations_empty}</span></center>
+		</td>
+	</tr>
+</table>
+
+<form method=POST action="" enctype="multipart/form-data">
+<input type=hidden name="o" value="AdminQuotationView">
+<input type=hidden name="step" value="add">
+{item_langs1}{item_langs2}{item_langs3}
+<span class="error">{header_error}</span>
+<table border=0 cellpadding=2 cellspacing=0 width=468>
+	<tr>
+		<td valign=top align="center"><span class="headline" align="center">{global.button.admin_bt_add}</span> </td>
+	</tr>
+
+	<tr>
+		<td valign=top align=left>Русская версия: {global.label.header} :</td>
+		<td valign=top align=left>{rus_value}<span class="error">{rusvalue_error}</span></td>
+	</tr>
+	<tr>
+		<td valign=top align=left>Украiнська версiя: {global.label.header} :</td>
+		<td valign=top align=left>{ukr_value}<span class="error">{ukrvalue_error}</span></td>
+	</tr>
+	<tr>
+		<td valign=top align=left>English version: {global.label.header} :</td>
+		<td valign=top align=left>{eng_value}<span class="error">{engvalue_error}</span></td>
+	</tr>
+
+	<tr valign=top>
+		<td colspan=3 align=center valign=middle height=40>
+			<input class=button type=reset value="{global.button.admin_bt_clear}" style="width:160px;">&nbsp;<input class=button type=submit name=submit style="width:190px;" value="{global.button.admin_bt_save}">
+		</td>
+	</tr>
+</table>
+{formEnd:static}

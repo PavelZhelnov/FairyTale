@@ -1,0 +1,115 @@
+<span class="headline" align="center">{global.header.head_members}</span>
+
+<br><br>
+<table border="0" width="100%" align="center">
+	<tr>
+		<td align=left height=25 valign=middle>
+			<center><span align="center" class="headlinesmall">{global.header.head_members_empty}</span></center>
+		</td>
+	</tr>
+</table>
+
+<form method="POST" action="{homePath:static}/Admin/AdminMember/SearchProperty" name="search">
+<input type=hidden name="o" value="AdminMemberView">
+<input type=hidden name="step" value="search">
+<FIELDSET title="Search Filter" style="width:590px;">
+<LEGEND>Search Filter</LEGEND>
+	<table width="395" border="0" align=center cellpadding=0 cellspacing=0>
+		<tr>
+			<td valign=top align=center width="100"><b>Last Name :</b> </td>
+			<td valign=top align=center width="100"><b>First Name :</b> </td>
+			<td valign=top align=center width="100"><b>Company :</b> </td>
+			<td valign=top align=center width="95"><b>Email : </b></td>
+			<td valign=top align=center width="100"><b>Amount per page :</b> </td>
+		</tr>
+		<tr>
+			<td>{last_name}</td>
+			<td>{first_name}</td>
+			<td>{company}</td>
+			<td>{email}</td>
+			<td>{amount}</td>
+		</tr>
+		<tr>
+			<td colspan="6" valign=top align=center>
+				<br>
+				<INPUT type="submit" value="Search" style="width:200px;">
+			</td>
+		</tr>
+	</table>
+<br>
+
+</FIELDSET>
+
+{formEnd:static}
+
+<!--
+<form method=POST action="" enctype="multipart/form-data">
+<input type=hidden name="o" value="AdminMemberView">
+<input type=hidden name="step" value="add">
+{id}
+
+<table border=0 cellpadding=2 cellspacing=0 width="70%">
+	<tr>
+		<td colspan="2" valign=top align="center"><span class="headline" align="center">Register new member...</span> <br>
+		<center>{header_error}</center><br>
+		<center>{model_error}</center><br>
+		</td>
+	</tr>
+	<tr>
+		<td align="right" >First Name : </td>
+		<td width="250">{first_name}</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">{first_name_error}</td>
+	</tr>
+	<tr>
+		<td align="right">Last Name : </td>
+		<td>{last_name}</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">{last_name_error}</td>
+	</tr>
+	<tr>
+		<td align="right">Login : </td>
+		<td>{login}</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">{login_error}</td>
+	</tr>
+
+	<tr>
+		<td align="right">Email Address : </td>
+		<td>{email}</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">{email_error}</td>
+	</tr>
+	<tr>
+		<td align="right">Company : </td>
+		<td>{company}</td>
+	</tr>
+
+	<tr>
+		<td align="right">Password : </td>
+		<td>{password}</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">{password_error}</td>
+	</tr>
+	<tr>
+		<td align="right">Confirm Password : </td>
+		<td>{conf_password}</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">{conf_password_error}</td>
+	</tr>
+
+
+	<tr valign=top>
+		<td colspan="2" align="right" valign=middle height=40>
+  			<input type="submit" value="{global.button.admin_bt_next}">
+		</td>
+	</tr>
+</table>
+{formEnd:static}
+-->

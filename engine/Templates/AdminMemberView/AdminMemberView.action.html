@@ -1,0 +1,101 @@
+<form method=POST action="{formaction}" enctype="multipart/form-data">
+<input type=hidden name="o" value="AdminMemberView">
+<input type=hidden name="step" value="{action}">
+<input type="hidden" name="form[id]" value="{id}">
+{item_langs1}{item_langs2}
+<span class="error">{header_error}</span>
+
+<table border=0 cellpadding=3 cellspacing=2 width="95%">
+	<tr>
+		<td colspan="3" valign=top align="center"><span class="headline" align="center">{global.header.head_members}::{actiontext}</span> <br>
+		<br><br>
+		<a href="{homePath:static}/Admin/AdminMember/">Return to the list of brokers</a>
+		</td>
+	</tr>
+	<tr>
+		<td rowspan="22" align="center" valign="middle">{objectprew}</td>
+		<td align="right" >Active user: </td>
+		<td width="250"><input type="hidden" name="form[activated]" value="0">{activated}</td>
+	</tr>
+
+	<tr>
+		<td align="right" >First Name : </td>
+		<td width="250">{first_name}</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">{first_name_error}</td>
+	</tr>
+	<tr>
+		<td align="right">Last Name : </td>
+		<td>{last_name}</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">{last_name_error}</td>
+	</tr>
+	<tr>
+		<td align="right">Login : </td>
+		<td>{login}</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">{login_error}</td>
+	</tr>
+	<tr>
+		<td align="right">Password : </td>
+		<td>{password}</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">{password_error}</td>
+	</tr>
+	<tr>
+		<td align="right">Confirm Password : </td>
+		<td>{conf_password}</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">{conf_password_error}</td>
+	</tr>
+
+	<tr>
+		<td align="right">Email Address : </td>
+		<td>{email}</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">{email_error}</td>
+	</tr>
+	<tr>
+		<td align="right">Company : </td>
+		<td>{company}</td>
+	</tr>
+	<tr>
+		<td align="right">Address : </td>
+		<td>{address}</td>
+	</tr>
+	<tr>
+		<td align="right">Phone : </td>
+		<td>{phone}</td>
+	</tr>
+	<tr>
+		<td align="right">Fax : </td>
+		<td>{fax}</td>
+	</tr>
+	<tr>
+		<td align="right">Celll : </td>
+		<td>{cell}</td>
+	</tr>
+
+	<tr>
+		<td align="right">Level : </td>
+		<td>{level}</td>
+	</tr>
+	<tr>
+		<td align="right">Photo : </td>
+		<td>{image}</td>
+	</tr>
+
+	<tr>
+		<td colspan="3" align="center"><input type="submit" value="{actiontext}"></td>
+	</tr>
+
+</table>
+
+
+{formEnd:static}

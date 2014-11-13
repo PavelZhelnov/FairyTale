@@ -1,0 +1,88 @@
+<span class="headline" align="center">{global.header.head_subscription}</span>
+<br><br>
+<table width="100%" border="0" align=center cellpadding=0 cellspacing=0>
+	<tr>		
+		<td width="100%" valign=top align=center>
+		<table border=0 cellspacing=0 cellpadding=0 align=center>
+			<tr><td align=center colspan=5 height=32><span class="headlinesmall" align="center">{empty_message}</span></td></tr>
+			
+		</table>
+		</td>		
+	</tr>
+</table>
+
+<br><br>
+<table border="0" align=center cellpadding=0 cellspacing=0>
+<tr>
+	<td colspan="2" align=center><span class="headlinesmall" align="center">{global.button.admin_bt_send}</span></td>
+</tr>
+
+	<tr>
+		<td valign=top align="center"><span class="headlinesmall" align="center">{actionbutton}</span> <br><br></td>
+	</tr>
+	<tr>
+		<td width="478" valign=top align=center>
+		<form method=POST action="{formaction}" enctype="multipart/form-data">
+		<input type=hidden name="o" value="AdminSubscriptionView">
+		<input type=hidden name="step" value="sendmail">
+		<input type=hidden name="form[sendcategory][{categoryid}]" value="{categoryid}">
+		<table border=0 cellpadding=2 cellspacing=0>
+			<tr>
+			<tr>
+				<td colspan="2" align=left>{description}{message_error}</td>
+			</tr>
+			<tr valign=top>
+				<td colspan=2 align=center valign=middle height=40>
+					<input class=button type=reset value="{global.button.admin_bt_clear}" style="width:160px;">&nbsp;<input class=button type=submit name=submit style="width:190px;" value="{global.button.admin_bt_send}">
+				</td>
+			</tr>
+		</table>
+		{formEnd:static}
+		</td>
+	</tr>
+</table>
+
+<br><br><br>
+<table border="0" align=center cellpadding=0 cellspacing=0>
+<tr>
+	<td colspan="2" align=center><span class="headlinesmall" align="center">{global.button.admin_bt_add} {global.label.subscriber}</span></td>
+</tr>
+</table>
+
+<form method="POST" action="" name="subscribe">
+<input type=hidden name="o" value="AdminSubscriptionView">
+<input type=hidden name="step" value="AddSubscriber">{categoryidsub}
+<!-- BEGIN menu --><table border="0" width="100%" align=center cellpadding=0 cellspacing=0>
+	<!-- BEGIN header --><tr>
+		<td class=first width="{catwidth}"><img src="{picPath:static}/1.gif" height=1 width={catwidth}></td>
+		<td class=first width="500">
+			{catcheck}{catname}
+		</td>			
+	</tr>
+	<!-- END header -->
+	<tr>
+		<td class=first width="{catwidth}"><img src="{picPath:static}/1.gif" height=1 width={catwidth}></td>
+		<td valign=top align=center colspan="2">
+		<!-- BEGIN category -->
+		<table border=0 cellpadding=0 cellspacing=0 align=center>		
+			<tr>
+			<td class=first width="{catwidth}"><img src="{picPath:static}/1.gif" height=1 width={catwidth}></td>
+			<td align=left valign=middle class=b width={catwidth2}>
+				{catcheck}{catname}
+		</table><!-- END category -->
+		</td>
+	</tr>
+</table>
+<!-- END menu -->
+<span class="error">{header_error}</span>
+{categoryidsub}
+<span class="error">{category_error}</span>
+<br>
+{email_format1}
+{email_format2}
+<br><br>
+<b>{global.label.email}: </b> {email} <span class="error">{email_error}</span>
+<br><br>
+
+<input value="{global.button.admin_bt_clear}" name="Reset" type=reset class=button>&nbsp;<input value="{global.button.admin_bt_subscribe}" name="form[submit]" type=submit class=button style="width:130px;">
+{formEnd:static}

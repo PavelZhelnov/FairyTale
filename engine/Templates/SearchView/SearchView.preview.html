@@ -1,0 +1,39 @@
+<script type="text/javascript">
+	
+	function eraseSearch(target) {leftS:static}
+		if (target.value=="{global.label.search}") {leftS:static}
+			target.value = "";
+		{rightS:static}
+	{rightS:static}
+	function submitSearch() {leftS:static}
+		eraseSearch(document.forms[0].elements['form[search]']);
+		document.forms[0].Submit();
+	{rightS:static}
+
+	function showSearch(target) {leftS:static}
+		if (target.value=="") {leftS:static}
+			target.value = "{global.label.search}";
+		{rightS:static}
+	{rightS:static}
+
+</script>
+
+<form method=POST action="{homePath:static}/search" enctype="multipart/form-data" onsubmit="submitSearch();">
+<input type=hidden name="o" value="SearchView">
+<input type=hidden name="step" value="search">
+
+<table border=0 width="237" cellpadding=0 cellspacing=0 class="searchtop">
+	<tr>
+		<td valign="bottom">
+			<table border=0 width="237" cellpadding=0 cellspacing=0>
+				<tr>
+					<td width="28">&nbsp;</td>
+					<td width="150" valign="middle"><input type="text" name="form[search]" value="{global.label.search}" onfocus="eraseSearch(this);" onblur="showSearch(this)" style="width:150px;"></td>
+					<td width="72" align="left" valign="middle"><input type="image"  src="{picPath:static}/elements/pointer_right.gif" name=submit onclick="submitSearch();"></td>
+				</tr>
+			</table>
+
+		</td>
+	</tr>
+</table>
+{formEnd:static}

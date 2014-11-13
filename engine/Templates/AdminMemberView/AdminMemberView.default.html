@@ -1,0 +1,175 @@
+<span class="headline" align="center">{global.header.head_members}</span>
+
+<br><br>
+<table width="100%" border="0" align=center cellpadding=0 cellspacing=0>
+	<tr>		
+		<td width="100%" valign=top align=center>
+		<table border=0 cellspacing=0 cellpadding=0 align=center>
+			<tr><td align=center colspan=5 height=32>{navbar}</td></tr>
+			<!-- BEGIN pagecontrol --><tr>
+				<td align=center width="10%" class=first height=30>{prev}</td>
+				<td align=center width="10%" class=first>{first}</td>
+				<td align=center width="60%" class=first>{pager}</td>
+				<td align=center width="10%" class=first>{last}</td>
+				<td align=center width="10%" class=first>{next}</td>
+			</tr>
+			<!-- END pagecontrol -->
+			<br>
+			<!-- BEGIN sort --><tr><td align=center colspan=5 height=25><span class="first"></span><b> Sorting by : </b>{date} | {status} | {name}<span class=first></span></td></tr><!-- END sort --> 
+		</table>
+		</td>		
+	</tr>
+</table>
+<br>
+
+<a href="{homePath:static}/Admin/AdminMember/AddMember">Add New Member</a>
+
+<form method="POST" action="{homePath:static}/Admin/AdminMember/SearchProperty" name="search">
+<input type=hidden name="o" value="AdminMemberView">
+<input type=hidden name="step" value="search">
+<FIELDSET title="Search Filter" style="width:590px;">
+<LEGEND>Search Filter</LEGEND>
+	<table width="395" border="0" align=center cellpadding=0 cellspacing=0>
+		<tr>
+			<td valign=top align=center width="100"><b>Last Name :</b> </td>
+			<td valign=top align=center width="100"><b>First Name :</b> </td>
+			<td valign=top align=center width="100"><b>Company :</b> </td>
+			<td valign=top align=center width="95"><b>Email : </b></td>
+			<td valign=top align=center width="100"><b>Amount per page :</b> </td>
+		</tr>
+		<tr>
+			<td>{last_name}</td>
+			<td>{first_name}</td>
+			<td>{company}</td>
+			<td>{email}</td>
+			<td>{amount}</td>
+		</tr>
+		<tr>
+			<td colspan="6" valign=top align=center>
+				<br>
+				<INPUT type="submit" value="Search" style="width:200px;">
+			</td>
+		</tr>
+	</table>
+<br>
+
+</FIELDSET>
+
+{formEnd:static}
+
+
+<table border="1" width="100%" align="center" cellpadding="0" cellspacing="0">
+	<tr bgcolor="#AAAAAA">
+		<td align="center" height=25>N#</td>
+		<td align="center" width="200">Broker Name/ Company</td>
+		<td align="center" width="150">Email</td>
+		<td align="center" width="120">Date Registered</td>
+		<td align="center" width="50">Activated</td>
+		<td align="center" width="50">Level</td>
+		<td align="center" width="150">Action</td>
+	</tr>
+
+<!-- BEGIN member -->
+
+	<tr class="contentlinetop">
+		<td align="center" height=25>{number}</td>
+		<td align="left" width="200" height=25 valign=middle><a href="{homePath:static}/Admin/AdminMember/ViewMember/{id}">{company} - {last_name} {first_name}</a></td>
+		<td align="left" valign=middle><a href="mailto:{email}">{email}</a></td>
+		<td align="left">{date}</td>
+		<td align="left">{activated}</td>
+		<td align="left">{level}</td>
+		<td align="center"><a href="{homePath:static}/Admin/AdminMember/ViewMember/{id}"><img src="{picPath:static}/buttons/smview.jpg" border=0></a>
+			<a href="{homePath:static}/Admin/AdminMember/EditMember/{id}"><img src="{picPath:static}/buttons/smedit.jpg" border=0></a><br>
+			<a href="{homePath:static}/Admin/AdminMember/DeleteMember/{id}"><img src="{picPath:static}/buttons/smdelete.jpg" border=0></a>
+			<a href="{homePath:static}/Admin/AdminProperty//ViewByMember/{id}"><img src="{picPath:static}/buttons/smproperty.jpg" border=0></a>
+		</td>
+	</tr>
+
+<!-- END member -->
+</table>
+
+<!--
+
+<form method=POST action="" enctype="multipart/form-data">
+<input type=hidden name="o" value="AdminMemberView">
+<input type=hidden name="step" value="add">
+{id}
+
+<table border=0 cellpadding=2 cellspacing=0 width="70%">
+	<tr>
+		<td colspan="2" valign=top align="center"><span class="headline" align="center">Register new member...</span> <br>
+		<center>{header_error}</center><br>
+		<center>{model_error}</center><br>
+		</td>
+	</tr>
+	<tr>
+		<td align="right" >First Name : </td>
+		<td width="250">{first_name}</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">{first_name_error}</td>
+	</tr>
+	<tr>
+		<td align="right">Last Name : </td>
+		<td>{last_name}</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">{last_name_error}</td>
+	</tr>
+	<tr>
+		<td align="right">Login : </td>
+		<td>{login}</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">{login_error}</td>
+	</tr>
+
+	<tr>
+		<td align="right">Email Address : </td>
+		<td>{email}</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">{email_error}</td>
+	</tr>
+	<tr>
+		<td align="right">Company : </td>
+		<td>{company}</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">{company_error}</td>
+	</tr>
+
+	<tr>
+		<td align="right">Level : </td>
+		<td>{level}</td>
+	</tr>
+
+	<tr>
+		<td align="right">Password : </td>
+		<td>{password}</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">{password_error}</td>
+	</tr>
+	<tr>
+		<td align="right">Confirm Password : </td>
+		<td>{conf_password}</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">{conf_password_error}</td>
+	</tr>
+
+	<tr>
+		<td align="right">Photo : </td>
+		<td>{image}</td>
+	</tr>
+
+	<tr valign=top>
+		<td colspan="2" align="right" valign=middle height=40>
+  			<input type="submit" value="{global.button.admin_bt_next}">
+		</td>
+	</tr>
+</table>
+{formEnd:static}
+
+-->

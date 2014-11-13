@@ -1,0 +1,87 @@
+<script type="text/javascript">
+	var a = new Array();
+	<!-- BEGIN SiteUrls -->
+		a[{id}] = '{name}';
+	<!-- END SiteUrls -->
+
+	function changeSiteUrl() {leftS:static}
+		//alert(document.forms[0].elements['form[id]'].value );
+		document.getElementById("siteurl").innerHTML="<a target='_blank' href=\'"+a[document.forms[0].elements['form[id]'].value]+"\'>"+a[document.forms[0].elements['form[id]'].value]+"<\/a>";
+	{rightS:static}
+</script>
+
+<center><b><span class="headline">{global.label.tracking_service}</span></b></center>
+<form method=POST action="" enctype="multipart/form-data">
+<input type=hidden name="o" value="TrackingView">
+<input type=hidden name="step" value="view">
+<table border=0 width=411 align="center" cellpadding=17 cellspacing=0>
+<tr><td>
+		<font size="1"> {global.label.information_for_container}: {texttrnum} {global.label.is_given_by} &nbsp;<a href="{siteurl}" target="_blank">{siteurl}</a></font>
+		<br><br>
+		{info}
+
+		<br>
+		<img src="{picPath:static}/layout/stoles_cut_23.gif" width="399" height="3" alt="">
+		<br><br>
+		<span class="error">{header_error}</span>
+
+
+	<!--container presense-->
+	<table border=1 width=399 align="center" cellpadding=5 cellspacing=0>
+	<tr><td>
+		<table border=0 cellpadding=2 cellspacing=0 width=399 align="center">
+			<tr>
+				<td valign=top align="center" colspan="2"><b>{global.label.container_presence}</b> <br><br></td>
+			</tr>
+		
+			<tr>
+				<td valign=top align=left width="150">{global.label.container_number}:</td>
+				<td>{presencenum}</td>
+				
+			</tr>
+			<tr>
+				<td colspan="2"><b><font color="Blue">{pres}</font></b></td>
+			</tr>
+			<tr>
+				<td align="center" width="150">&nbsp;</td>
+				<td align="left" width="320"><input class=button type=submit name=submit style="width:100px;" value="{global.button.track_container}"><br>
+					<span class="error">{presence_error}</span>
+				</td>
+			</tr>
+				
+		</table>
+	</td></tr></table>
+	<br><br>
+	<!--container tracking-->
+	<table border=1 width=399 align="center" cellpadding=5 cellspacing=0>
+	<tr><td>
+		<table border=0 cellpadding=2 cellspacing=0 width=399 align="center">
+			<tr>
+				<td valign=top align="center" colspan="2"><b>{global.label.tracking_details}</b> <br><br></td>
+			</tr>
+		
+			<tr>
+				<td valign=top align=left width="150">{global.label.container_line}:</td>
+				<td valign=top align=left>{service}<span class="error">{service_error}</span></td>
+			</tr>
+			<tr>
+				<td valign=top align=left>{global.label.container_number} :</td>
+				<td valign=top align=left>{trackingnum}<br><span class="error">{trackingnum_error}</span></td>
+			</tr>
+			<tr>
+				<td colspan="2"><div id="siteurl"></div></td>
+			</tr>
+			<tr valign=top>
+				<td width=150>&nbsp;</td>
+				<td align=left valign=middle height=40>
+					<input class=button type=submit name=submit style="width:100px;" value="{global.button.track_container}">
+				</td>
+			</tr>
+
+		</table>
+	</td></tr></table>
+	
+
+</td></tr></table>
+
+{formEnd:static}

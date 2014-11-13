@@ -1,0 +1,159 @@
+
+<script language="javascript">
+
+	function eraseVacancy(target, val) {leftS:static}
+		if (target.value==val) {leftS:static}
+			target.value = "";
+		{rightS:static}
+	{rightS:static}
+	function submitAllVacancy() {leftS:static}
+		eraseVacancy(document.forms['vacancy'].elements['form[contactname]'],'{global.label.name_surname}');
+		eraseVacancy(document.forms['vacancy'].elements['form[birthday]'],'{global.label.birthday}');
+		eraseVacancy(document.forms['vacancy'].elements['form[city]'],'{global.label.habit_city}');
+		eraseVacancy(document.forms['vacancy'].elements['form[phone]'],'{global.label.contact_phone}');
+
+		eraseVacancy(document.forms['vacancy'].elements['form[interesting_vacancy]'],'{global.label.interesting_vacancy}');
+		eraseVacancy(document.forms['vacancy'].elements['form[institution_name1]'],'{global.label.university_name}');
+		eraseVacancy(document.forms['vacancy'].elements['form[institution_name2]'],'{global.label.university_name}');
+		eraseVacancy(document.forms['vacancy'].elements['form[faculty1]'],'{global.label.faculty}');
+		eraseVacancy(document.forms['vacancy'].elements['form[faculty2]'],'{global.label.faculty}');
+		eraseVacancy(document.forms['vacancy'].elements['form[qualification1]'],'{global.label.qualification}');
+		eraseVacancy(document.forms['vacancy'].elements['form[qualification2]'],'{global.label.qualification}');
+		eraseVacancy(document.forms['vacancy'].elements['form[experience]'],'{global.label.experience}');
+
+		document.forms['vacancy'].submit;
+	{rightS:static}
+
+	function showVacancy(target,val) {leftS:static}
+		if (target.value=="") {leftS:static}
+			target.value = val;
+		{rightS:static}
+	{rightS:static}
+
+</script>
+
+
+<table border=0 cellpadding=0 cellspacing=0 width="100%" align="center">
+	<tr>
+		<td>
+			<br>
+			<span class="mainheader">{global.label.ancet}</span><br><br>
+			{text}
+		</td>
+	</tr>
+</table>
+	
+<br><br>
+<form method=POST action="" enctype="multipart/form-data" name="vacancy" onsubmit="submitAllVacancy();">
+<input type=hidden name="o" value="ThingsView">
+<input type=hidden name="step" value="sendvacancy">
+
+<table border="0" width="100%" align="center">
+	<tr>
+		<td colspan="2" align="center"><span class="error">{header_error}</span></td>
+	
+	
+	<tr>
+		<td height="32" valign="middle">{contactname}</td>
+	</tr>
+	<tr>
+		<td><span class="error">{contactname_error}</span></td>
+	</tr>
+	<tr>
+		<td height="32" valign="middle">{birthday}</td>
+	</tr>
+	<tr>
+		<td height="32" valign="middle">{gender}</td>
+	</tr>
+	<tr>
+		<td height="32" valign="middle">{city}</td>
+	</tr>
+	<tr>
+		<td height="32" valign="middle">{phone}</td>
+	</tr>
+	<tr>
+		<td><span class="error">{phone_error}</span></td>
+	</tr>
+	<tr>
+		<td>{email}</td>
+	</tr>
+	<tr>
+		<td colspan="2"><span class="error">{email_error}</span></td>
+	</tr>	
+	<tr>
+		<td height="32">{interesting_vacancy}</td>
+	</tr>
+	
+	<tr>
+ 		<td align=left height=25 valign=middle colspan="2">
+ 			<br><span align="center" class="sub_mainheader_bold">{global.label.additional_info}</span>
+ 		</td>
+ 	</tr>
+
+	<tr>
+		<td align=left height=25 valign=middle colspan="2">
+			<center><br><br></center>
+		</td>
+	</tr>
+	<tr>
+		<td height="32">{education1}</td>
+	</tr>
+	<tr>
+		<td height="32">{institution_name1}</td>
+	</tr>
+	<tr>
+		<td height="32">{edform1}</td>
+	</tr>
+	<tr>
+		<td height="32">{faculty1}</td>
+	</tr>
+	<tr>
+		<td height="32">{qualification1}</td>
+	</tr>
+
+	<tr>
+		<td align=left height=25 valign=middle colspan="2">
+			<center><br><br></center>
+		</td>
+	</tr>
+	<tr>
+		<td height="32">{education2}</td>
+	</tr>
+	<tr>
+		<td height="32">{institution_name2}</td>
+	</tr>
+	<tr>
+		<td height="32">{edform2}</td>
+	</tr>
+	<tr>
+		<td height="32">{faculty2}</td>
+	</tr>
+	<tr>
+		<td height="32">{qualification2}</td>
+	</tr>
+
+	<tr>
+ 		<td align=left height=25 valign=middle colspan="2">
+ 			<br><span align="center" class="sub_mainheader_bold">{global.label.experience}</span>
+ 		</td>
+ 	</tr>
+
+	<tr>
+		<td height="32">{experience}</td>
+	</tr>
+	
+	<tr>
+		<td height="32">{pc_knowledge}</td>
+	</tr>
+	<tr>
+		<td height="32">{english_knowledge}</td>
+	</tr>
+
+	<tr valign=top>
+		<td colspan="2" align=left valign=middle height=40>
+			<img src="{picPath:static}/elements/pointer_right.gif" border=0>&nbsp;&nbsp;<input class=button type="submit" name="submit" style="width:80px;" value="{global.button.admin_bt_send}" onclick="submitAllVacancy();">
+		</td>
+	</tr>
+	
+</table>
+

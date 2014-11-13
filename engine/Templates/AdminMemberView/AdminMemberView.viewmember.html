@@ -1,0 +1,123 @@
+<table border=1 cellpadding=3 cellspacing=2 width=95%>
+	<tr>
+		<td colspan="3" valign=top align="center"><span class="headline" align="center">{global.header.head_members} : {first_name}</span> <br>
+		<br><br>
+		<a href="{homePath:static}/Admin/AdminMember/">Return to the list of brokers</a>		
+		</td>
+	</tr>
+	<tr>
+		<td rowspan="8" width="160" align="center" valign="middle">{objectprew}</td>
+		<td width="30%" align="right"> Name : </td>
+		<td width="50%">{first_name} {last_name}</td>
+	</tr>
+	<tr>
+		<td align="right">Email : </td>
+		<td >{email}</td>
+	</tr>
+	<tr>
+		<td align="right">Company : </td>
+		<td>{company}</td>
+	</tr>
+	<tr>
+		<td align="right">Address : </td>
+		<td>{address}</td>
+	</tr>
+	<tr>
+		<td align="right">Phone : </td>
+		<td>{phone}</td>
+	</tr>
+	<tr>
+		<td align="right">Fax : </td>
+		<td>{fax}</td>
+	</tr>
+	<tr>
+		<td align="right">Cell : </td>
+		<td>{cell}</td>
+	</tr>
+
+	<tr>
+		<td align="right">Login : </td>
+		<td >{login}</td>
+	</tr>
+	<tr>
+		<td colspan="3" align="right"><br><br></td>
+	</tr>
+
+</table>
+<table border=0 cellpadding=3 cellspacing=2 width=95%>
+	
+	<tr bgcolor="#EEEEEE">
+		<td colspan="3" align="center"><b>Statistic for this member</b></td>
+	</tr>
+	
+	<tr bgcolor="#EEEEEE">
+		<td><b>{tasks} Urgent Matters</b></td>
+		<td>&nbsp;</td>
+	</tr>
+
+	<!-- BEGIN duetasks -->
+
+	<tr>
+		<td>{name}</td>
+		<td>{qty}</td>
+	</tr>
+	<!-- END duetasks -->
+
+	<!-- BEGIN overduetasks -->
+
+	<tr>
+		<td>{name}</td>
+		<td>{qty}</td>
+	</tr>
+	<!-- END overduetasks -->
+
+	<!-- BEGIN notes -->
+
+	<tr>
+		<td>{name}</td>
+		<td>{qty}</td>
+	</tr>
+	<!-- END notes -->
+
+	<tr>
+		<td><b>Total:</b></td>
+		<td>{tasks}</td>
+	</tr>
+
+	<tr bgcolor="#EEEEEE">
+		<td><b>{properties} Properties</b></td>
+		<td><a href="{homePath:static}/Consumer/ListingAgent/HUD/AddListing/">+</a></td>
+	</tr>
+
+	<!-- BEGIN statuses -->
+
+	<tr>
+		<td>{name}</td>
+		<td>{qty}</td>
+	</tr>
+	<!-- END statuses -->
+	<tr>
+		<td><b>Total:</b></td>
+		<td>{properties}</td>
+	</tr>
+
+
+	<tr bgcolor="#EEEEEE">
+		<td><b>{bpo} BPO properties</b></td>
+		<td><a href="{homePath:static}/{lgroup}/ListingAgent/HUD/AddListing/">+</a></td>
+	</tr>
+
+	<!-- BEGIN bpos -->
+
+	<tr>
+		<td>{name}</td>
+		<td>{qty}</td>
+	</tr>
+	<!-- END bpos -->
+	<tr>
+		<td><b>Total:</b></td>
+		<td>{bpo}</td>
+	</tr>
+
+
+</table>

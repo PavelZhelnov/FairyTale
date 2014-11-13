@@ -1,0 +1,65 @@
+<span class="headline" align="center">{global.header.head_news}</span>
+
+<br><br>
+<table width="100%" border="0" align=center cellpadding=0 cellspacing=0>
+	<tr>		
+		<td width="100%" valign=top align=center>
+		<table border=0 cellspacing=0 cellpadding=0 align=center>
+			<tr><td align=center colspan=5 height=32>{navbar}</td></tr>
+			<!-- BEGIN pagecontrol --><tr>
+				<td align=center width="10%" class=first height=30>{prev}</td>
+				<td align=center width="10%" class=first>{first}</td>
+				<td align=center width="60%" class=first>{pager}</td>
+				<td align=center width="10%" class=first>{last}</td>
+				<td align=center width="10%" class=first>{next}</td>
+			</tr><!-- END pagecontrol -->
+		</table>
+		</td>		
+	</tr>
+</table>
+<br>
+<table border="0" width="100%" align="center" cellpadding="1" cellspacing="3">
+<!-- BEGIN quotations -->
+	<tr class="contentlinetop">
+		<td align="left" height=25 width="300" valign=middle><a href="{homePath:static}/Admin/AdminQuotation/EditQuotation/{id}">{value}</a> <br></td>
+		<td align="left" height=25 width="50" valign=middle><a href="{homePath:static}/Admin/AdminQuotation/EditQuotation/{id}">{global.button.admin_bt_edit}</a></td>
+		<td align="left" height=25 width="50" valign=middle><a href="{homePath:static}/Admin/AdminQuotation/DeleteQuotation/{id}">{global.button.admin_bt_delete}</a></td>
+	</tr>
+	<tr>
+		<td align="left" colspan="3">&nbsp;</td>
+	</tr>
+
+<!-- END quotations -->
+</table>
+
+<form method=POST action="" enctype="multipart/form-data">
+<input type=hidden name="o" value="AdminQuotationView">
+<input type=hidden name="step" value="add">
+{item_langs1}{item_langs2}{item_langs3}
+<span class="error">{header_error}</span>
+<table border=0 cellpadding=2 cellspacing=0 width=468>
+	<tr>
+		<td valign=top align="center"><span class="headline" align="center">{global.button.admin_bt_add}</span> </td>
+	</tr>
+
+	<tr>
+		<td valign=top align=left>Русская версия: {global.label.header} :</td>
+		<td valign=top align=left>{rus_value}<span class="error">{rusvalue_error}</span></td>
+	</tr>
+	<tr>
+		<td valign=top align=left>Украiнська версiя: {global.label.header} :</td>
+		<td valign=top align=left>{ukr_value}<span class="error">{ukrvalue_error}</span></td>
+	</tr>
+	<tr>
+		<td valign=top align=left>English version: {global.label.header} :</td>
+		<td valign=top align=left>{eng_value}<span class="error">{engvalue_error}</span></td>
+	</tr>
+
+	<tr valign=top>
+		<td colspan=3 align=center valign=middle height=40>
+			<input class=button type=reset value="{global.button.admin_bt_clear}" style="width:160px;">&nbsp;<input class=button type=submit name=submit style="width:190px;" value="{global.button.admin_bt_save}">
+		</td>
+	</tr>
+</table>
+{formEnd:static}
+

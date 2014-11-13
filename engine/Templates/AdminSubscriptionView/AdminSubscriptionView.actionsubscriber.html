@@ -1,0 +1,41 @@
+<span class="headline" align="center">{global.header.head_subscription}</span>
+<br><br>
+
+<form method="POST" action="" name="subscribe">
+<input type=hidden name="o" value="AdminSubscriptionView">
+<input type=hidden name="step" value="{action}">{hidden}
+<!-- BEGIN menu --><table border="0" width="100%" align=center cellpadding=0 cellspacing=0>
+	<!-- BEGIN header --><tr>
+		<td class=first width="{catwidth}"><img src="{picPath:static}/1.gif" height=1 width={catwidth}></td>
+		<td class=first width="600">
+			{catchecksubscr}{catname}
+		</td>			
+	</tr>
+	<!-- END header -->
+	<tr>
+		<td class=first width="{catwidth}"><img src="{picPath:static}/1.gif" height=1 width={catwidth}></td>
+		<td valign=top align=center colspan="2">
+		<!-- BEGIN category -->
+		<table border=0 cellpadding=0 cellspacing=0 align=center>		
+			<tr>
+			<td class=first width="{catwidth}"><img src="{picPath:static}/1.gif" height=1 width={catwidth}></td>
+			<td align=left valign=middle class=b width={catwidth2}>
+				{catchecksubscr}{catname}
+		</table><!-- END category -->
+		</td>
+	</tr>
+</table>
+<!-- END menu -->
+
+<br>
+<center>
+{email_format1}
+{email_format2}
+<br><br>
+{email} {authcode} {id}
+</center>
+<br><br>
+
+
+<input value="{global.button.admin_bt_clear}" name="Reset" type=reset class=button>&nbsp;<input value="{actionbutton}" name="form[submit]" type=submit class=button style="width:130px;">
+{formEnd:static}

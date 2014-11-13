@@ -1,0 +1,81 @@
+<span class="headline" align="center">{global.header.head_subscription}</span>
+<br><br>
+<a class="menuitem" href="{homePath:static}/Admin/AdminSubscription/ViewSubscribers/">{global.label.admin_viewallsubscribers}</a>
+<form method=POST action="" enctype="multipart/form-data">
+<input type=hidden name="o" value="AdminSubscriptionView">
+<input type=hidden name="step" value="sendmail">
+<span class="error">{header_error}</span>
+		
+<!-- BEGIN menu --><table border="0" width="100%" align=center cellpadding=0 cellspacing=0>
+	<!-- BEGIN header --><tr>
+		<!--<td class=first width="{catwidth}"><img src="{picPath:static}/1.gif" height=1 width={catwidth}></td>-->
+		<td class=b width="500">
+			{catchecks}{catname} ( <a class="menuitem" href="{homePath:static}/Admin/AdminSubscription/ViewSubscribers/{catid}">{global.button.admin_bt_viewmail}</a> / <a class="menuitem" href="{homePath:static}/Admin/AdminSubscription/EditCategory/{catid}">{global.button.admin_bt_edit}</a> / <a class="menuitem" href="{homePath:static}/Admin/AdminSubscription/DeleteCategory/{catid}">{global.button.admin_bt_delete}</a>)
+		</td>			
+	</tr>
+	<!-- END header -->
+	<tr>
+		<!--<td class=first width="{catwidth}"><img src="{picPath:static}/1.gif" height=1 width={catwidth}></td>-->
+		<td valign=top align=center colspan="2">
+		<!-- BEGIN category -->
+		<table border=0 cellpadding=0 cellspacing=0 align=center>		
+			<tr>
+			<td class=first width="{catwidth}"><img src="{picPath:static}/1.gif" height=1 width={catwidth}></td>
+			<td align=left valign=middle class=b width={catwidth2}>{catchecks}{catname} ( <a class="menuitem" href="{homePath:static}/Admin/AdminSubscription/ViewSubscribers/{catid}">{global.button.admin_bt_viewmail}</a> / <a class="menuitem" href="{homePath:static}/Admin/AdminSubscription/EditCategory/{catid}">{global.button.admin_bt_edit}</a> / <a class="menuitem" href="{homePath:static}/Admin/AdminSubscription/DeleteCategory/{catid}">{global.button.admin_bt_delete}</a>)</td>
+		</table><!-- END category -->
+		</td>
+	</tr>
+</table>
+<!-- END menu -->
+<span class="error">{category_error}</span>
+<br><br>
+<hr align="center" width=50%>
+<table border=0 align=center width=100%>
+<tr>
+	<td align=center><span class="headlinesmall" align="center">{global.button.admin_bt_send}</span></td>
+</tr>
+<tr>
+	<td align=center>{mailtext}<span class="error">{message_error}</span></td>
+</tr>
+<tr>
+	<td align=center valign=middle height=40>
+	<input class=button type=reset value="{global.button.admin_bt_clear}" style="width:160px;">&nbsp;<input class=button type=submit name=submit style="width:190px;" value="{global.button.admin_bt_send}">
+	</td>
+</tr>
+</table>
+{formEnd:static}
+<br><br><br>
+
+<table border="0" align=center cellpadding=0 cellspacing=0>
+<tr>
+		<td colspan="1" valign=top align="center"><span class="headlinesmall" align="center">{global.button.admin_bt_add}</span> <br><br></td>
+</tr>
+<tr>
+		<td width="478" valign=top align=center>
+		<form method=POST action="" enctype="multipart/form-data">
+		<input type=hidden name="o" value="AdminSubscriptionView">
+		<input type=hidden name="step" value="addcategory">
+		{item_langs1}{item_langs2}
+		<table border=0 cellpadding=2 cellspacing=0>
+			<tr>
+				<td width=126 valign=top align=right class=b>{global.label.parent_category}: </td>
+				<td width=340 valign=top align=left>{categoryadd}<br></td>
+			</tr>
+			<tr>
+				<td width=156 valign=top align=right class=b>{global.label.admin_rus_version}: </td>
+				<td width=360 valign=top align=left>{rus_name} <br>{local.text.req_title} <span class="error">{name1_error}</span></td>
+			</tr>
+			<tr>
+				<td width=156 valign=top align=right class=b>{global.label.admin_eng_version}: </td>
+				<td width=360 valign=top align=left>{eng_name} <br>{local.text.req_title} <span class="error">{name2_error}</span></td>
+			</tr>
+			<tr valign=top>
+				<td colspan="2" align=center valign=middle height=40>
+					<input class=button type=reset value="{global.button.admin_bt_clear}" style="width:160px;">&nbsp;<input class=button type=submit name=submit style="width:190px;" value="{global.button.admin_bt_add}">
+				</td>
+			</tr>
+		</table>
+		{formEnd:static}
+		</td>
+</tr>
+</table>

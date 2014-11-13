@@ -1,0 +1,19 @@
+ErrorDocument 404 /eng
+AddDefaultCharset WINDOWS-1251
+
+
+<Files eng>
+	SetHandler application/x-httpd-php
+</Files>
+<Files rus>
+	SetHandler application/x-httpd-php
+</Files>
+<Files ukr>
+	SetHandler application/x-httpd-php
+</Files>
+
+php_value register_globals 1
+php_flag  register_globals on
+php_value error_reporting E_ALL
+php_value display_errors 1
+Directoryindex index.php

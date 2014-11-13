@@ -1,0 +1,18 @@
+<span class="headline" align="center">{global.label.admin_editing}: {pagename}</span>
+<form method=POST action="" enctype="multipart/form-data">
+<input type=hidden name="o" value="AdminEmailView">
+<input type=hidden name="step" value="edit">
+<table border=0 cellpadding=2 cellspacing=0 align="center">
+	<tr>
+		<td valign=top align=left class=b><br><br>{global.label.email}: </td>
+	</tr>
+	<tr>
+		<td valign=top align=left>{email}<br> {email_error}</td>
+	</tr>
+	<tr valign=top>
+		<td colspan=3 align=center valign=middle height=40>
+			<input class=button type=reset value="{global.button.admin_bt_clear}" style="width:160px;">&nbsp;<input class=button type=submit name=submit style="width:190px;" value="{global.button.admin_bt_update}">
+		</td>
+	</tr>
+</table>
+{formEnd:static}

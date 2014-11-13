@@ -1,0 +1,62 @@
+<script language="javascript" src="{rootPath:static}/scripts/calendar.js"></script>
+<center><span class="headline">Log Information List is Empty!</span></center>
+
+<form method="POST" action="{homePath:static}/Admin/Log" name="search">
+<input type=hidden name="o" value="LogView">
+<input type=hidden name="step" value="search">
+<table border=0 width="800" cellpadding="0" cellspacing="0" align="center">
+<tr><td align="center">
+
+	<table border=0 cellspacing=0 cellpadding=0 align=center>
+		<tr><td align=center colspan=6>{navbar}</td></tr>
+		<!-- BEGIN pagecontrol --><tr>
+			<td align=center width="9%" class=first >{prev}&nbsp;</td>
+			<td align=center width="9%" class=first>{first}&nbsp;</td>
+			<td align=center width="50%" class=first>{pager}&nbsp;</td>
+			<td align=center width="9%" class=first>{last}&nbsp;</td>
+			<td align=center width="9%" class=first>{next}</td>
+			<td align=center width="14%">Go to page:{gotopage}</td>			
+		</tr>
+		<tr>
+			<td colspan="6" align="center">Records/Pages total: {total}/{pages}</td>
+		</tr>
+		<!-- END pagecontrol -->
+	</table>
+
+</td></tr>
+
+<tr>
+	<td valign=top align=center>
+		<br>
+			<INPUT type="submit" value="Search" style="width:200px;">&nbsp;&nbsp;<a href="{homePath:static}/Admin/Log/viewall">Clear Filter</a>
+	</td>
+</tr>
+
+<tr><td align="center">
+	<br>
+	<table border=1 width="800" align="center" cellpadding="0" cellspacing="0">
+		<tr>
+			<td>{amount}</td>
+			<td align="center"><b>From:{date_from}<a href="javascript:showCal('Calendar1');"><img src="{picPath:static}/buttons/date.png" border="0" name="idate" alt="Select Date" hspace="0" vspace="0" width=15 height=15></a><a href="javascript:void(0);" onClick="javascript:document.forms['search'].elements['form[date_from]'].value='';"><img src="{picPath:static}/buttons/eraser.gif" border="0" alt="Clear" hspace="0" vspace="0" width=15 height=15 ><br>To:{date_to}<a href="javascript:showCal('Calendar2');"><img src="{picPath:static}/buttons/date.png" border="0" name="idate" alt="Select Date" hspace="0" vspace="0" width=15 height=15 ></a><a href="javascript:void(0);" onClick="javascript:document.forms['search'].elements['form[date_to]'].value='';"><img src="{picPath:static}/buttons/eraser.gif" border="0" alt="Clear" hspace="0" vspace="0" width=15 height=15 ></b></td>
+			<td>{action_type}</td>
+			<td>{section}</td>
+			<td>Last Name: {last_name}<br>
+				First Name: {first_name}</td>
+			<td></td>
+		</tr>
+	</table>
+
+</td></tr>
+
+</table>
+
+
+<script language="JavaScript">
+addCalendar("Calendar1", "Select_Date", "form[date_from]", "search");
+addCalendar("Calendar2", "Select_Date", "form[date_to]", "search");
+
+setWidth(90, 2, 15, 2);
+setFormat("YYYY-mm-dd");
+</script>
+
+{formEnd:static}

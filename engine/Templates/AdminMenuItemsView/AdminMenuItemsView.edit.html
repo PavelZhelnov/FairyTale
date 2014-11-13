@@ -1,0 +1,73 @@
+<span class="headline" align="center">{global.label.admin_editing} : {global.button.admin_bt_menuitems} </span>
+<form method=POST action="{formaction}" enctype="multipart/form-data">
+<input type=hidden name="o" value="AdminMenuItemsView">
+<input type=hidden name="step" value="{action}">
+<input type="hidden" name="form[id]" value="{id}">
+<input type="hidden" name="form[version]" value="{version}">
+{item_langs1}{item_langs2}{item_langs3}{idhidden}
+<span class="error">{header_error}</span>
+<table border=0 cellpadding=2 cellspacing=0 width="300">
+	<tr>
+		<td valign=top align="left">{global.label.category}: </td>
+		<td valign=top align="left">{menuitems}</td>		
+	</tr>
+    <!-- BEGIN Edit -->
+    {lang}
+    <tr>
+        <td valign=top align=left>{language_label} {global.label.header} :</td>
+        <td valign=top align=left>{name}<span class="error">{name_error}</span></td>
+    </tr>
+    <tr>
+        <td valign=top align=left>{language_label} Title :</td>
+        <td valign=top align=left>{description}{description_error}</td>
+    </tr>
+    <tr>
+        <td valign=top align=left>{language_label} Meta-info :</td>
+        <td valign=top align=left>{meta_info}</td>
+    </tr>
+    <!-- END Edit -->
+
+
+    <tr>
+		<td valign=top align=left>{global.label.contentpage} :</td>
+		<td valign=top align=left>{contentpage}<span class="error">{contentpage_error}</span></td>
+	</tr>
+	<tr>
+		<td valign=top align=left>Module :</td>
+		<td valign=top align=left>{modules}<span class="error">{module_error}</span></td>
+	</tr>
+	
+	<tr>
+		<td valign=top align=left>
+			<input type="hidden" value="0" name="form[noactive]">
+			Not Active :
+		</td>
+		<td valign=top align=left>{active}</td>
+	</tr>
+
+	<tr valign=top>
+		<td colspan="2" align=center valign=middle height=40>
+			<input class=button type=reset value="{global.button.admin_bt_clear}" style="width:160px;">&nbsp;<input class=button type=submit name=submit style="width:160px;" value="{actionbutton}">
+		</td>
+	</tr>
+</table>
+
+<script language="javascript">
+	function toggleModule() {leftS:static}		
+		if (document.forms['menuitem'].elements['form[module]'].selectedIndex>0) {leftS:static}
+			document.forms['menuitem'].elements['form[contentpage]'].selectedIndex=0;
+		{rightS:static}
+	{rightS:static}
+	
+	function toggleContent() {leftS:static}		
+		if (document.forms['menuitem'].elements['form[contentpage]'].selectedIndex>0) {leftS:static}
+			document.forms['menuitem'].elements['form[module]'].selectedIndex=0;
+		{rightS:static}
+	{rightS:static}
+	
+</script>
+
+<span id="action_message" class="action_message" type="message">{action_message}</span>
+<div class="hidden_text" type="error" id="error_text_1">{action_message_error}</div>
+
+</form>

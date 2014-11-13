@@ -1,0 +1,58 @@
+<script language="javascript" src="{rootPath:static}/scripts/listmenu.js"></script>
+
+<center><span class="headline">Admin Global System Settings - Division list</span></center>
+
+<table border=0 width="800" cellpadding="0" cellspacing="0" align="center">
+
+<tr><td align="center">
+	<br>
+	<table border=1 width="755" align="center" cellpadding="0" cellspacing="0">
+		<tr class="listheader">
+		<!-- BEGIN sort -->
+			<td align="center" width="25"><b>Act.</b></td>
+			<td width="50">#</td>
+			<td align="center" width="600" height="30"><b>{department}</b></td>
+		<!-- END sort --> 
+		</tr>
+		<!-- BEGIN list -->
+		<tr>
+			<td class="contPanel" id="panel">
+				<img src="{picPath:static}/buttons/more.gif" name="1" align="left" border="0" alt="Action ..." onmouseover="move_cp('CtrlPanel',this, '{id}')">
+			</td>
+			<td>{num}&nbsp;</td>
+			<td height="18">{name}&nbsp;</td>
+		</tr>
+		<!-- END list -->
+	</table>
+
+</td></tr>
+
+</table>
+
+
+<!-- BEGIN popupmenu -->
+<table border="0" cellspacing=0 cellpadding=0 id="CtrlPanel">
+  <tr>
+  <td width="30" id="cpanel_pointer">&nbsp;</td>
+  <td>
+  	<table border="0" cellspacing=0 cellpadding=0 class="contPanel">
+
+	  <tr valign="middle" >
+	    <td>
+	      <img src="{picPath:static}/buttons/less.gif" alt="Hide buttons" onclick='setTimeout("hidePanel()", 300);'>
+	    </td>
+	    <td>
+	    	<!-- BEGIN pop1 -->		    
+				<div class="popup_buttons"><a class="popup" href="javascript:document.getElementById('CtrlPanel').style.visibility='hidden';submitAction('{action}','{target}')">{button}</a></div>
+	    	<!-- END pop1 -->
+	    </td>
+	  </tr>
+	</table>
+  </td></tr>
+</table>
+<!-- END popupmenu -->
+
+<span id="action_message" class="action_message" type="message">{action_message}</span>
+<script type="text/javascript" language="javascript">
+     showActionMessage('{action_message}');
+</script>

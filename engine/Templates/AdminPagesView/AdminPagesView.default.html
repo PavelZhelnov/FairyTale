@@ -1,0 +1,47 @@
+<span align="center" class="headline">{global.label.admin_page_head}</span>
+<br><br>
+<table border="0" width="100%" align="center" cellpadding="3" cellspacing="1">
+<!-- BEGIN pages -->
+	<tr>
+		<td align=left height=25 valign=middle>
+			<a class="topmenuitem" href="{homePath:static}/AdminPages/EditPage/{textid}">{textheader}</a>
+		</td>
+		<td align=left height=25 valign=middle>
+			<a class="topmenuitem" href="{homePath:static}/AdminPages/EditPage/{textid}">{global.button.admin_bt_edit}</a> /
+			<!--<a class="topmenuitem" href="{homePath:static}/AdminPages/DeletePage/{textid}">{global.button.admin_bt_delete}</a>-->
+		</td>
+	</tr>
+<!-- END pages -->
+</table>
+
+
+<span class="headline" align="center">{global.button.admin_bt_add} </span>
+<form method=POST action="{formaction}" enctype="multipart/form-data">
+<input type=hidden name="o" value="AdminPagesView">
+<input type=hidden name="step" value="add">
+<input type="hidden" name="form[id]" value="">
+{item_langs1}{item_langs2}
+<span class="error">{header_error}</span>
+<table border=0 cellpadding=2 cellspacing=0 width=468>
+	<tr>
+		<td valign=top align=left>{global.label.name} :</td>
+		<td valign=top align=left>{name} <span class="error">{name_error}</span> </td>
+	</tr>
+	<tr>
+		<td></td><td colspan="1" align="left">{global.label.constraints_contentpage}</td>
+	</tr>
+
+	<tr>
+		<td valign=top align=left>{global.label.header} :</td>
+		<td valign=top align=left>{eng_header} <span class="error">{engheader_error}</span></td>
+	</tr>
+	<tr>
+		<td colspan="2" valign=top align=left>{eng_text}<br></td>
+	</tr>
+	<tr valign=top>
+		<td colspan="2" align=center valign=middle height=40>
+			<input class=button type=reset value="{global.button.admin_bt_clear}" style="width:160px;">&nbsp;<input class=button type=submit name=submit style="width:160px;" value="{global.button.admin_bt_add}">
+		</td>
+	</tr>
+</table>
+{formEnd:static}

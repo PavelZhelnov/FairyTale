@@ -1,0 +1,43 @@
+
+<form method=POST action="{formaction}" enctype="multipart/form-data">
+<input type=hidden name="o" value="AdminModuleView">
+<input type=hidden name="step" value="Save">
+<input type=hidden name="form[id]" value="{id}">
+<br>
+
+<table width="490" border="0" align=center cellpadding=0 cellspacing=0 bgcolor="#F8F8F8">
+	<tr>
+		<td width="478" valign=top align=center class=first align=center>
+			Edit Module Setting #{id}:
+		</td>
+	</tr>
+</table>
+<br>
+
+{header_error} {model_error}
+<br><br>
+<table width="490" border="0" align=center cellpadding=0 cellspacing=0 bgcolor="#F8F8F8">
+	<tr>
+		<td width="478" valign=top align=center>
+
+		<table border="0" width="548" align="center" cellpadding=5 cellspacing=0 >
+			<tr><td width="548" height="1" colspan=3><img src="{picPath:static}/1.gif" height=1 width=548></td></tr>
+			<tr>
+				<td class=b valign=top align=right >Variable: </td>
+				<td width=30  valign=top>&nbsp;</td>
+				<td bgcolor="#FFFFFF">{name} </td>
+			</tr>
+			<tr>
+				<td class=b width=100 align=right >Value:</td>
+				<td width=30 > </td>
+				<td width=518 bgcolor="#FFFFFF">{valuehidd}{value} </td>
+			</tr>
+		</table>
+		<input type=submit class=button name=submit value=":: Save Module Setting >>">
+
+		</td>
+	</tr>
+</table>
+
+<br>
+{formEnd:static}

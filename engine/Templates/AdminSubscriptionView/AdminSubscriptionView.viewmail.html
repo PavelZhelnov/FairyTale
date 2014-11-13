@@ -1,0 +1,68 @@
+<span class="headline" align="center">{global.header.head_subscription}</span>
+<br><br>
+<table width="100%" border="0" align=center cellpadding=0 cellspacing=0>
+	<tr>		
+		<td width="100%" valign=top align=center>
+		<table border=0 cellspacing=0 cellpadding=0 align=center>
+			<tr><td align=center colspan=5 height=32>{navbar}</td></tr>
+			<!-- BEGIN pagecontrol --><tr>
+				<td align=center width="10%" class="menuitem" height=30>{prev}</td>
+				<td align=center width="10%" class="menuitem">{first}</td>
+				<td align=center width="60%" class="menuitem">{pager}</td>
+				<td align=center width="10%" class="menuitem">{last}</td>
+				<td align=center width="10%" class="menuitem">{next}</td>
+			</tr><!-- END pagecontrol -->
+		</table>
+		</td>		
+	</tr>
+</table>
+<br>
+
+<table border="0" align=center width=500>
+<!-- BEGIN mail -->
+<tr>
+	<td cliss=first width="500" bgcolor="#DFDFDF">
+		<span class="headlinesmall">{maillink}</span> ( <a class="menuitem" href="{homePath:static}/Admin/AdminSubscription/EditMail/{mailid}">{global.button.admin_bt_edit}</a> / <a class="menuitem" href="{homePath:static}/Admin/AdminSubscription/DeleteMail/{mailid}">{global.button.admin_bt_delete}</a>)
+	</td>
+</tr>
+<tr>
+	<td width="500">
+		<p align="left">{mailtext}</p>
+	</td>
+</tr>
+<tr>
+		<td> &nbsp;</td>
+</tr>
+<!-- END mail -->
+</table>
+
+
+<br><br>
+<table border="0" align=center cellpadding=0 cellspacing=0>
+	<tr>
+		<td colspan="2" valign=top align="center"><span class="headlinesmall" align="center">{global.button.admin_bt_send}</span> <br><br></td>
+	</tr>
+	<tr>
+		<td width="478" valign=top align=center>
+		<form method=POST action="{formaction}" enctype="multipart/form-data">
+		<input type=hidden name="o" value="AdminSubscriptionView">
+		<input type=hidden name="step" value="sendmail">
+		<input type=hidden name="form[sendcategory][{categoryid}]" value="{categoryid}">
+		<table border=0 cellpadding=2 cellspacing=0>
+			<tr>
+				<td width="10%" valign=top align=left class=b>{global.label.category}: </td>
+				<td width="90%" valign=top align=left>{categoryname}<br></td>
+			</tr>
+			<tr>
+				<td colspan="2" align=left>{description}{message_error}</td>
+			</tr>
+			<tr valign=top>
+				<td colspan=2 align=center valign=middle height=40>
+					<input class=button type=reset value="{global.button.admin_bt_clear}" style="width:160px;">&nbsp;<input class=button type=submit name=submit style="width:190px;" value="{global.button.admin_bt_send}">
+				</td>
+			</tr>
+		</table>
+		{formEnd:static}
+		</td>
+	</tr>
+</table>
