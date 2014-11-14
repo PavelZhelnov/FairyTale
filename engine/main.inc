@@ -79,10 +79,9 @@
 	if(empty($REGISTRY['Core']['Debug'])) return;
 	$dt4 = $REGISTRY['SQLtime'];
 	//phpinfo();
-	//$time4 = currentTime();
-	//$dt5 = $time4 - $time3;
-	//print "<li>".$dt5;
-	print "<!-- " . round($dt1 + $dt2 + $dt3,6) . " -->";
+	$time4 = currentTime();
+	$dt5 = $time4 - $time3;
+	//print "<!-- " . round($dt1 + $dt2 + $dt3,6) . " -->";
 /*	print "\n<br>\n<table border=\"1\" cellpadding=\"2\" cellspacing=\"0\"><tr><td colspan=\"2\"><b>Time spent</b></td></tr>"
 		. "<tr><td>include</td><td>".round($dt1, 6)." sec</td></tr>"
 		. "<tr><td>init</td><td>".round($dt2, 6)." sec</td></tr>"

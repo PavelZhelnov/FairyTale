@@ -10,12 +10,12 @@
 	}
 
 	function is_EngText($string,$min_length = 0,$max_length = 0) {
-		$ret = _is_valid($string,$min_length,$max_length,"[^абвгдеёжзийклмнопрстуфхчцшщьыъэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЬЫЪЭЮЯ]+");
+		$ret = _is_valid($string,$min_length,$max_length,"[^пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅЕЁпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ]+");
 		return $ret;
 	}
 
 	function is_Alpha($string,$min_length = 0,$max_length = 0) {
-		$ret = _is_valid($string,$min_length,$max_length,"[a-zабвгдеёжзийклмнопрстуфхчцшщьыъэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЬЫЪЭЮЯ]+");
+		$ret = _is_valid($string,$min_length,$max_length,"[a-zпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅЕЁпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ]+");
 		return $ret;
 	}
 
@@ -35,7 +35,7 @@
 	}
 
 	function is_AlphaNum($string,$min_length = 0,$max_length = 0) {
-		$ret = _is_valid($string,$min_length,$max_length,"[a-zабвгдеёжзийклмнопрстуфхчцшщьыъэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЬЫЪЭЮЯ0-9]+");
+		$ret = _is_valid($string,$min_length,$max_length,"[a-zA-Z0-9]+");
 		return $ret;
 	}
 
@@ -45,12 +45,12 @@
 	}
 
 	function is_AlphaNumDefis($string,$min_length = 0,$max_length = 0) {
-		$ret = _is_valid($string,$min_length,$max_length,"[a-zабвгдеёжзийклмнопрстуфхчцшщьыъэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЬЫЪЭЮЯ0-9_-]+");
+		$ret = _is_valid($string,$min_length,$max_length,"[a-zA-Z0-9_-]+");
 		return $ret;
 	}
 
 	function is_AlphaNumDefisSpace($string,$min_length = 0,$max_length = 0) {
-		$ret = _is_valid($string,$min_length,$max_length,"[ a-zабвгдеёжзийклмнопрстуфхчцшщьыъэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЬЫЪЭЮЯ0-9_-]+");
+		$ret = _is_valid($string,$min_length,$max_length,"[ a-zA-Z0-9_-]+");
 		return $ret;
 	}
 
@@ -73,32 +73,26 @@
 		return $ret;
 	}
 
-	// доп. функция для удаления опасных сиволов
 	function pregtrim($str) {
 		return preg_replace("/[^\x20-\xFF]/","",@strval($str));
 	}
 
 	function checkURL($url) {
-		// режем левые символы и крайние пробелы
 		$url=trim(pregtrim($url));
-		// если пусто - выход
 		if(strlen($url)==0) return '';
-		//проверяем УРЛ на правильность
 		if(!preg_match("~^(?:(?:https?|ftp|telnet)://(?:[a-z0-9_-]{1,32}".
 		"(?::[a-z0-9_-]{1,32})?@)?)?(?:(?:[a-z0-9-]{1,128}\.)+(?:com|net|".
 		"org|mil|edu|arpa|gov|biz|info|aero|inc|name|[a-z]{2})|(?!0)(?:(?".
 		"!0[^.]|255)[0-9]{1,3}\.){3}(?!0|255)[0-9]{1,3})(?:/[a-z0-9.,_@%&".
 		"?+=\~/-]*)?(?:#[^ '\"&<>]*)?$~i",$url,$ok))
-		return ''; // если не правильно - выход
-		// если нет протокала - добавить
+		return '';
 		if(!strstr($url,"://")) $url="http://".$url;
-		// заменить протокол на нижний регистр: hTtP -> http
 		$url=preg_replace("~^[a-z]+~ie","strtolower('\\0')",$url);
 		return $url;
 	}
 
 	function is_CleanText($string,$min_length = 0,$max_length = 0) {
-		$ret = _is_valid($string,$min_length,$max_length,"[a-zабвгдеёжзийклмнопрстуфхчцшщьыъэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЬЫЪЭЮЯ[:space:].-]+");
+		$ret = _is_valid($string,$min_length,$max_length,"[a-zA-Z[:space:].-]+");
 		return $ret;
 	}
 	
@@ -108,7 +102,7 @@
 	}
 	
 	function is_AdvCleanText($string,$min_length = 0,$max_length = 0) {
-		$ret = _is_valid($string,$min_length,$max_length,"[a-zабвгдеёжзийклмнопрстуфхчцшщьыъэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЬЫЪЭЮЯ0-9[:space:].,;:)(_!?-]+");
+		$ret = _is_valid($string,$min_length,$max_length,"[a-zA-Z0-9[:space:].,;:)(_!?-]+");
 		return $ret;
 	}
 

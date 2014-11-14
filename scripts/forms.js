@@ -133,7 +133,7 @@ function showErrorBox(){
 	return false;
 	var textElement = document.getElementById("error_text_1");
 	var text;
-	if(textElement == null || (text = textElement.innerHTML) == "") // Если нет сообщения об ошибке - выходим
+	if(textElement == null || (text = textElement.innerHTML) == "") // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ - пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		return false;
 	document.getElementById("messagebox_text_1").innerHTML = text;
 	document.getElementById("message_background_1").style.visibility = "visible";
@@ -148,7 +148,7 @@ function hideErrorBox(){
 function showMessageBox(textElementId){
 	var textElement = document.getElementById(textElementId);
 	var text;
-	if(textElement == null || (text = textElement.innerHTML) == "") // Если нет сообщения об ошибке - выходим
+	if(textElement == null || (text = textElement.innerHTML) == "") // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ - пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		return false;
 	var style = '', classname = '';
 	var close_button = (textElement.getAttribute('close') == 'button')?true:false;

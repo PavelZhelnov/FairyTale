@@ -63,8 +63,10 @@ class Slot extends XTemplate {
 	public $year = array('--Year--');
 	public $hour = array('--Hour--');
 	public $min = array('--Min--');
-	
-	function Relocate($path) {
+
+    public $DEFAULT_ELEMENT_SIZE = '40';
+
+    function Relocate($path) {
 		header("Location: ".$path);
 		$this->isRelocate = true;
 	}
@@ -269,7 +271,6 @@ class Slot extends XTemplate {
 		
 		//error notification
 		$err = $this->Action->getError($this->Task);
-		//echo("error is $err");
 		if ($err !== false) {
 			$this->TempFillEls['action_message_error'] = $this->globalLangContent['error_model'][$err];
 		}
@@ -281,7 +282,6 @@ class Slot extends XTemplate {
 		if (empty($this->Ready)) {
 			$result = $this->parseTemplate($this->TempFillEls);
 			unset ($this->TempFillEls);
-			//$this->echo_memory_usage();
 			return $this->setResult($result);
 		} else {
 			return $this->setResult($this->Result);
@@ -390,43 +390,43 @@ class Slot extends XTemplate {
         return '';
     }
 
-    function fillLanguageModel($className, $action="default") {
-        $menuItemMeta = getClassMethodsAnnotations($className);
+    function fillLanguageModel($className, $template=array(), $action="default") {
+        $classMeta = getClassMethodsAnnotations($className);
         $menuArray = array();
         foreach($this->LM->Langs as $languagekey=>$languagevalue) {
-            $prepObj = !empty($this->PreparedTemplates['name_langs'])?
-                $this->getPrepObjByLangId($this->PreparedTemplates['name_langs']['data'], $languagevalue):'';
+            $prepObj = !empty($template['name_langs'])?
+                $this->getPrepObjByLangId($template['name_langs']['data'], $languagevalue):'';
 
-            foreach($menuItemMeta as $itemMetaKey => $itemMetaValue) {
+            foreach($classMeta as $itemMetaKey => $itemMetaValue) {
                 $modelAnn = new ModelAnnotation( $itemMetaValue );
                 $index = $languagevalue - 1;
-                $menuArray[$languagevalue]['language_label'] = $this->globalLangContent['label']['language_'.$languagekey];
+                $menuArray[$languagevalue.'-l']['language_label'] = $this->globalLangContent['label']['language_'.$languagekey];
                 $prepData = !empty($prepObj)?$prepObj[$itemMetaKey]:'';
                 $fieldName = 'form[name_langs]['.$index.']['.$itemMetaKey.']';
                 $addParameters = ' id="'.$fieldName.'" '.($modelAnn->required?' required ':'');
                 switch ($modelAnn->type) {
                     case 'hidden':
-                        $menuArray[$languagevalue][$itemMetaKey] =
+                        $menuArray[$languagevalue.'-l'][$itemMetaKey] =
                             inputHidden($fieldName,$languagevalue);
                         break;
                     case 'string':
-                        $menuArray[$languagevalue][$itemMetaKey] =
+                        $menuArray[$languagevalue.'-l'][$itemMetaKey] =
                             ($action=='delete'?
                                 $prepData:
                                 inputText(
                                     $fieldName,
                                     (!empty($this->Request)? $this->Request['form']['name_langs'][$index][$itemMetaKey] :$prepData ),
-                                    $this->correctSize('40'), $addParameters)
+                                    $this->correctSize($this->DEFAULT_ELEMENT_SIZE), $addParameters)
                             );
                         break;
                     case 'text':
-                        $menuArray[$languagevalue][$itemMetaKey] =
+                        $menuArray[$languagevalue.'-l'][$itemMetaKey] =
                             ($action=='delete'?
                                 $prepData:
                                 inputTextArea(
                                     $fieldName,
                                     (!empty($this->Request)? $this->Request['form']['name_langs'][$index][$itemMetaKey] : $prepData),
-                                    $this->correctSize('40'),$this->correctSize('5'), $addParameters)
+                                    $this->correctSize($this->DEFAULT_ELEMENT_SIZE),$this->correctSize('5'), $addParameters)
                             );
                         break;
                     default:
@@ -436,8 +436,112 @@ class Slot extends XTemplate {
 
         }
         return $menuArray;
-
     }
+
+
+    function fillModel($className, $template=array(), $action="default", $selectArrays = array()) {
+        //printArray($selectArrays);
+        $classMeta = getClassMethodsAnnotations($className);
+        $result = array();
+        $result['langid']=$this->LM->Langs[$this->language];
+        $result['action'] = $action;
+        $result['actionbutton'] = ($action=='delete'?$this->globalLangContent['button']['admin_bt_delete']:$this->globalLangContent['button']['admin_bt_update']);
+
+        $prepObj = (!empty($template)&&$action!="default")?$template:array();
+        $tabIndex = 1;
+        foreach($classMeta as $itemMetaKey => $itemMetaValue) {
+            $modelAnn = new ModelAnnotation( $itemMetaValue );
+            $prepData = !empty($prepObj)?$prepObj[$itemMetaKey]:'';
+
+            $fieldName = 'form['.$itemMetaKey.']';
+            $addParameters = ' id="'.$fieldName.'" '.($modelAnn->required?' required ':'');
+            switch ($modelAnn->type) {
+                case 'boolean':
+                    $result[$itemMetaKey.'_stub'] = inputHidden($fieldName,0);
+                    $result[$itemMetaKey] = ($action=='delete'?($prepData?"Y":"N"):
+                        inputCheckbox($fieldName,
+                        (!empty($this->Request['form'][$itemMetaKey])? $this->Request['form'][$itemMetaKey] :$prepData ), $prepData?TRUE:FALSE, $tabIndex++));
+                    break;
+                case 'hidden':
+                    $result[$itemMetaKey] = inputHidden($fieldName,$prepData);
+                    break;
+                case 'string':
+                    $result[$itemMetaKey] =
+                            ($action=='delete'?
+                                $prepData:
+                                inputText(
+                                    $fieldName,
+                                    (!empty($this->Request['form'][$itemMetaKey])? $this->Request['form'][$itemMetaKey] :$prepData ),
+                                    $this->correctSize($this->DEFAULT_ELEMENT_SIZE), $addParameters)
+                            );
+                    break;
+                case 'text':
+                    $result[$itemMetaKey] =
+                            ($action=='delete'?
+                                $prepData:
+                                inputTextArea(
+                                    $fieldName,
+                                    (!empty($this->Request['form'][$itemMetaKey])? $this->Request['form'][$itemMetaKey] : $prepData),
+                                    $this->correctSize($this->DEFAULT_ELEMENT_SIZE),$this->correctSize('5'), $addParameters)
+                            );
+                    break;
+                case 'object':
+                    $result['Language'] = $this->fillLanguageModel($modelAnn->object, $template, $action);
+                    break;
+                case 'select':
+                    $result[$itemMetaKey] =
+                            ($action=='delete'?
+                                $selectArrays[$itemMetaKey][$prepData]:
+                                inputSelect(
+                                    $fieldName, $selectArrays[$itemMetaKey], $prepData, (!empty($modelAnn->onchange)?$modelAnn->onchange:''))
+                            );
+                    break;
+                 default:
+                    break;
+            }
+        }
+        //merge
+        $result = array_merge_recursive($result, $this->errors);
+        return $result;
+    }
+
+    function validateByModel($className, $template=array(), $prefix = array()) {
+        $classMeta = getClassMethodsAnnotations($className);
+        $prepObj = (!empty($template)) ? $template : array();
+        foreach ($classMeta as $itemMetaKey => $itemMetaValue) {
+            $modelAnn = new ModelAnnotation($itemMetaValue);
+            $prepData = !empty($prepObj[$itemMetaKey]) ? $prepObj[$itemMetaKey] : '';
+            if ($modelAnn->uiignore) continue;
+            if ($modelAnn->required && empty($prepData)) {
+                $prefix[$itemMetaKey.'_error'] = $this->globalLangContent['error_view']['err_name'];//TODO
+                continue;
+            }
+            switch ($modelAnn->type) {
+                case 'string':
+                    if(!empty($prepData) && !is_FullText($prepData,1,$modelAnn->maxlength)) {
+                        $prefix[$itemMetaKey.'_error'] = $this->globalLangContent['error_view']['err_name'];//TODO
+                    }
+                    break;
+                case 'object':
+                    if (strpos($modelAnn->object, "_Lang")>0) {
+                        foreach($template[$itemMetaKey] as $k=>$v) {
+                            $langValidatetionError = $this->validateByModel($modelAnn->object, $v, array());
+                            if (!empty($langValidatetionError)) {
+                                $prefix['Language'][$v['lang'] . '-l'] = $langValidatetionError;
+                            }
+
+                        }
+                    } else {
+                        $this->validateByModel($modelAnn->object, $template[$itemMetaKey]);
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+        return $prefix;
+    }
+
 
 }
 ?>

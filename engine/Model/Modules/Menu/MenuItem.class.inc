@@ -18,7 +18,8 @@ class MenuItem extends RootEntity {
     public $url;
 
     /**
-     * @type:integer
+     * @onchange:toggleModule()
+     * @type:select
      */
     public $module;
     public $features;
@@ -29,9 +30,12 @@ class MenuItem extends RootEntity {
     public $noactive;
 
     /**
-     * @type:integer
+     * @type:select
      */
     public $contentpage;
+    /**
+     * @type:select
+     */
     public $parent_item;
 
     /**

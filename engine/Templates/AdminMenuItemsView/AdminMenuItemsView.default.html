@@ -1,40 +1,42 @@
 <span align="center" class="headline">{global.label.admin_menuitems_head}</span>
 <br><br>
+
+<table border="0" width="550">
+    <!-- BEGIN Menu -->
+    <tr>
+        <td>
+            <!--<a href="{homePath:static}/AdminMenuItems/Up/{id}"><img border=0 src="{picPath:static}/buttons/up.gif"></a>
+            <a href="{homePath:static}/AdminMenuItems/Down/{id}"><img border=0 src="{picPath:static}/buttons/down.gif"></a>
+            -->
+        </td>
+        <td width="248" height="25" bgcolor="#eeeeee">
+            <table border=0>
+                <tr><td><b>{name}</b></td></tr>
+            </table>
+        </td>
+        <td >
+            {urledit} {urldelete}
+        </td>
+    </tr>
+    <!-- BEGIN Items -->
+    <tr>
+        <td></td>
+        <td width="450" bgcolor="#eeeeee">{name}</td>
+        <td width="300">
+            {urledit} {urldelete}
+        </td>
+    </tr>
+    <!-- END Items -->
+    <!-- END Menu -->
+</table>
+
+<!-- BEGIN Edit -->
+
 <form method=POST action="" enctype="multipart/form-data" name="menuitem">
 <input type=hidden name="o" value="AdminMenuItemsView">
 <input type=hidden name="step" value="add">
-<input type="hidden" name="form[id]" value="">
-{item_langs1}{item_langs2}{item_langs3}
+{id}{version}
 
-
-<table border="0" width="550">
-<!-- BEGIN Menu -->
-	<tr>
-		<td>
-			<!--<a href="{homePath:static}/AdminMenuItems/Up/{id}"><img border=0 src="{picPath:static}/buttons/up.gif"></a>
-			<a href="{homePath:static}/AdminMenuItems/Down/{id}"><img border=0 src="{picPath:static}/buttons/down.gif"></a>
-			-->
-		</td>
-		<td width="248" height="25" bgcolor="#eeeeee">
-		<table border=0>
-			<tr><td><b>{name}</b></td></tr>
-		</table>
-		</td>
-		<td >
-			{urledit} {urldelete}
-		</td>
-	</tr>
-	<!-- BEGIN Items -->
-	<tr>
-		<td></td>
-		<td width="450" bgcolor="#eeeeee">{name}</td>
-		<td width="300">
-			{urledit} {urldelete}
-		</td>
-	</tr>
-	<!-- END Items -->
-<!-- END Menu -->
-</table>
 <br>
 
 <span class="headline" align="center">{global.button.admin_bt_add} </span>
@@ -43,10 +45,10 @@
 <table border=0 cellpadding=2 cellspacing=0 width="400">
 	<tr>
 		<td valign=top align="left">{global.label.category}: </td>
-		<td valign=top align="left">{menuitems}</td>		
+		<td valign=top align="left">{parent_item}</td>
 	</tr>
 
-    <!-- BEGIN Edit -->
+    <!-- BEGIN Language -->
         {lang}
         <tr>
             <td valign=top align=left>{language_label} {global.label.header} :</td>
@@ -54,13 +56,13 @@
         </tr>
         <tr>
             <td valign=top align=left>{language_label} Title :</td>
-            <td valign=top align=left>{description}{description_error}</td>
+            <td valign=top align=left>{description}<span class="error">{description_error}</span></td>
         </tr>
         <tr>
             <td valign=top align=left>{language_label} Meta-info :</td>
             <td valign=top align=left>{meta_info}</td>
         </tr>
-    <!-- END Edit -->
+    <!-- END Language -->
 
 
 	<tr>
@@ -69,15 +71,14 @@
 	</tr>
 	<tr>
 		<td valign=top align=left>Module :</td>
-		<td valign=top align=left>{modules}<span class="error">{module_error}</span></td>
+		<td valign=top align=left>{module}<span class="error">{module_error}</span></td>
 	</tr>
-	
+
 	<tr>
 		<td valign=top align=left>
-			<input type="hidden" value="0" name="form[noactive]">
 			Not Active :
 		</td>
-		<td valign=top align=left>{active}</td>
+		<td valign=top align=left>{noactive_stub}{noactive}</td>
 	</tr>
 	<tr valign=top>
 		<td colspan="2" align=center valign=middle height=40>
@@ -88,13 +89,13 @@
 
 
 <script language="javascript">
-	function toggleModule() {leftS:static}		
+	function toggleModule() {leftS:static}
 		if (document.forms['menuitem'].elements['form[module]'].selectedIndex>0) {leftS:static}
 			document.forms['menuitem'].elements['form[contentpage]'].selectedIndex=0;
 		{rightS:static}
 	{rightS:static}
-	
-	function toggleContent() {leftS:static}		
+
+	function toggleContent() {leftS:static}
 		if (document.forms['menuitem'].elements['form[contentpage]'].selectedIndex>0) {leftS:static}
 			document.forms['menuitem'].elements['form[module]'].selectedIndex=0;
 		{rightS:static}
@@ -102,7 +103,9 @@
 
 </script>
 
-<span id="action_message" class="action_message" type="message">{action_message}</span>
-<div class="hidden_text" type="error" id="error_text_1">{action_message_error}</div>
 
 </form>
+<!-- END Edit -->
+
+<span id="action_message" class="action_message" type="message">{action_message}</span>
+<div class="hidden_text" type="error" id="error_text_1">{action_message_error}</div>

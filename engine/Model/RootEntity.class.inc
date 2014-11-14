@@ -3,7 +3,7 @@
 class RootEntity {
 
     /**
-     * @type:id
+     * @type:hidden
      * @uiignore:true
     */
 	public $id;
@@ -24,6 +24,7 @@ class RootEntity {
      */
 	public $updated_date;
     /**
+     * @type:hidden
      * @uiignore:true
      */
 	public $version;

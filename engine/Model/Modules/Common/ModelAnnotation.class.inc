@@ -4,8 +4,10 @@ class ModelAnnotation {
     public $uiignore;
     public $type;
     public $maxlength;
+    public $minlength;
     public $object;
     public $required;
+    public $onchange;
 
 
     function __construct($doc) {

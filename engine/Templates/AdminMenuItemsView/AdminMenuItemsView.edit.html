@@ -1,17 +1,17 @@
 <span class="headline" align="center">{global.label.admin_editing} : {global.button.admin_bt_menuitems} </span>
+<!-- BEGIN Edit -->
 <form method=POST action="{formaction}" enctype="multipart/form-data">
 <input type=hidden name="o" value="AdminMenuItemsView">
 <input type=hidden name="step" value="{action}">
-<input type="hidden" name="form[id]" value="{id}">
-<input type="hidden" name="form[version]" value="{version}">
-{item_langs1}{item_langs2}{item_langs3}{idhidden}
+{id}{version}
 <span class="error">{header_error}</span>
 <table border=0 cellpadding=2 cellspacing=0 width="300">
 	<tr>
 		<td valign=top align="left">{global.label.category}: </td>
-		<td valign=top align="left">{menuitems}</td>		
+		<td valign=top align="left">{parent_item}</td>
 	</tr>
-    <!-- BEGIN Edit -->
+
+    <!-- BEGIN Language -->
     {lang}
     <tr>
         <td valign=top align=left>{language_label} {global.label.header} :</td>
@@ -19,13 +19,14 @@
     </tr>
     <tr>
         <td valign=top align=left>{language_label} Title :</td>
-        <td valign=top align=left>{description}{description_error}</td>
+        <td valign=top align=left>{description}<span class="error">{description_error}</span></td>
     </tr>
     <tr>
         <td valign=top align=left>{language_label} Meta-info :</td>
         <td valign=top align=left>{meta_info}</td>
     </tr>
-    <!-- END Edit -->
+    <!-- END Language -->
+
 
 
     <tr>
@@ -34,15 +35,14 @@
 	</tr>
 	<tr>
 		<td valign=top align=left>Module :</td>
-		<td valign=top align=left>{modules}<span class="error">{module_error}</span></td>
+		<td valign=top align=left>{module}<span class="error">{module_error}</span></td>
 	</tr>
 	
 	<tr>
 		<td valign=top align=left>
-			<input type="hidden" value="0" name="form[noactive]">
 			Not Active :
 		</td>
-		<td valign=top align=left>{active}</td>
+		<td valign=top align=left>{noactive_stub}{noactive}</td>
 	</tr>
 
 	<tr valign=top>
@@ -67,7 +67,9 @@
 	
 </script>
 
-<span id="action_message" class="action_message" type="message">{action_message}</span>
-<div class="hidden_text" type="error" id="error_text_1">{action_message_error}</div>
 
 </form>
+<!-- END Edit -->
+
+<span id="action_message" class="action_message" type="message">{action_message}</span>
+<div class="hidden_text" type="error" id="error_text_1">{action_message_error}</div>
