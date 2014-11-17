@@ -24,13 +24,13 @@ class LanguageManager extends RootRegistry {
 	}
 
 	function mainContent() {
-		$conditions = array('l.id' => 'll.ownerid','l.module' => 1,'m.id' => 'l.module','ll.language' => $this->Langs[$this->language],'lt.id' => 'l.contenttype');
+		$conditions = array('l.id' => 'll.ownerid','l.module' => 1,'m.id' => 'l.module','ll.lang' => $this->Langs[$this->language],'lt.id' => 'l.contenttype');
 		$this->globalContent = $this->DB->SelectLang($this->tables,$this->fields,$conditions);
 	}
 
 	function moduleContent($module) {
 		//if(isset($this->localContent[$module])) return $this->localContent[$module];
-		$conditions = array('l.id' => 'll.ownerid','ll.language' => $this->Langs[$this->language],'lt.id' => 'l.contenttype','l.module' => $module,'m.id' => 'l.module');
+		$conditions = array('l.id' => 'll.ownerid','ll.lang' => $this->Langs[$this->language],'lt.id' => 'l.contenttype','l.module' => $module,'m.id' => 'l.module');
 		//$this->localContent[$module] = $this->DB->SelectLang($this->tables,$this->fields,$conditions);
 		//return $this->localContent[$module];
 		return $this->DB->SelectLang($this->tables,$this->fields,$conditions);
@@ -42,7 +42,7 @@ class LanguageManager extends RootRegistry {
 	}
 
 	function getModules() {
-		$conditions = array('m.id' => 'ml.ownerid','ml.language' => $this->Langs[$this->language]);
+		$conditions = array('m.id' => 'ml.ownerid','ml.lang' => $this->Langs[$this->language]);
 		$this->Modules = $this->DB->SelectGuide(array('module as m','module_lang as ml'),array('ml.ownerid as id','ml.name as name'),$conditions);
 	}
 }

@@ -1,14 +1,14 @@
 <?php
 $Registry = array (
 	'Properties' => array (
-		'Tasks' => array (	/* массив задач с событиями */
-			'Task' => array (	/* массив событий для задачи */
-				'Event' => array (	/* массив параметров события */
-					'minPerm' => '',	/* минимальное право на событие */
-					'handlerMethod' => '',	/* метод Handlerа для данного события */
-					'forward' => '',	/* URL, на который будет редирект после выполнения */
-					'scheme' => '',	/* Scheme, на которую будет редирект после выполнения */
-					'actionMethod' => '',	/* метод Action после удачного выполнения метода Handlera */
+		'Tasks' => array (
+			'Task' => array (
+				'Event' => array (
+					'minPerm' => '',
+					'handlerMethod' => '',
+					'forward' => '',
+					'scheme' => '',
+					'actionMethod' => '',
 				),
 			),
 		),

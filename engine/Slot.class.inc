@@ -8,6 +8,7 @@ class Slot extends XTemplate {
 	//protected $error = array();
 	public $TempFillEls = array();
 	public $isRelocate = false;
+    public $handleModel = '';
 	
 	public $ModuleID = 1;
 	public $SectionID = 1;

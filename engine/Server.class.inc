@@ -16,7 +16,6 @@ include_once($MODEL_PATH.'/Modules/Workflow/Counter/CounterHandler.class.inc');
 include_once($MODEL_PATH.'/Modules/Common/LogHandler.class.inc');
 include_once($MODEL_PATH.'/Modules/Statistic/StatisticHandler.class.inc');
 include_once($MODEL_PATH.'/Modules/AdminModule/AdminModuleHandler.class.inc');
-include_once($MODEL_PATH.'/Modules/Workflow/Tracking/TrackingHandler.class.inc');
 include_once($MODEL_PATH.'/Modules/Things/SearchHandler.class.inc');
 
 include_once($CONTROL_PATH.'/Action.class.inc');
@@ -24,7 +23,7 @@ include_once($CONTROL_PATH.'/LogAction.class.inc');
 include_once($CONTROL_PATH.'/GlobalSystemSettingsAction.class.inc');
 include_once($CONTROL_PATH.'/SecurityAction.class.inc'); 
 include_once($CONTROL_PATH.'/SearchAction.class.inc'); 
-include_once($CONTROL_PATH.'/LangAction.class.inc');
+
 include_once($CONTROL_PATH.'/ThingsAction.class.inc');
 include_once($CONTROL_PATH.'/MessageAction.class.inc');
 include_once($CONTROL_PATH.'/MenuAction.class.inc');
@@ -33,7 +32,6 @@ include_once($CONTROL_PATH.'/DocsAction.class.inc');
 include_once($CONTROL_PATH.'/HeaderAction.class.inc');
 include_once($CONTROL_PATH.'/MetaInfoAction.class.inc');
 include_once($CONTROL_PATH.'/QuotationAction.class.inc');
-include_once($CONTROL_PATH.'/TrackingAction.class.inc');
 include_once($CONTROL_PATH.'/StatisticAction.class.inc');
 include_once($CONTROL_PATH.'/AdminAction.class.inc');
 include_once($CONTROL_PATH.'/AdminEmailAction.class.inc');
@@ -49,6 +47,7 @@ include_once($CONTROL_PATH.'/AdminPagesAction.class.inc');
 include_once($CONTROL_PATH.'/QuotationAction.class.inc');
 include_once($CONTROL_PATH.'/AdminSubscriptionAction.class.inc');
 include_once($CONTROL_PATH.'/AdminMenuItemsAction.class.inc');
+include_once($CONTROL_PATH.'/AdminContentItemAction.class.inc');
 
 class Server extends RootRegistry{
 
@@ -65,6 +64,7 @@ class Server extends RootRegistry{
 		'ModuleAdminSearch' => array(),
 		'AdminMemberSearch' => array(),
 		'AdminDocumentSearch' => array(),
+        'LanguageAdminSearch' => array()
 	);
 
 	function Server($name='Server') {

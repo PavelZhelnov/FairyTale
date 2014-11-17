@@ -1,10 +1,22 @@
 <?php 
 class ContentItem_Lang  extends RootEntity
 {
-   public $id;
-   public $ownerid;
-   public $language; 
-   public $value;
+    /**
+     * @type:integer
+     */
+    public $ownerid;
+
+    /**
+     * @type:hidden
+     */
+    public $lang;
+
+    /**
+     * @type:string
+     * @maxlength:255
+     * @required
+     */
+    public $value;
    
 }
 ?>

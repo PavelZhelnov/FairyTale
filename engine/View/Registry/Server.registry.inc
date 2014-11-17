@@ -20,12 +20,6 @@ $Registry = array (
 				'm' => '3',
 				'url' => 'Admin',
 			),
-			'4' => array( /* LanguageAdmin */
-				'a' => 'Lang',
-				'h' => 'Lang',
-				'm' => '4',
-				'url' => 'Admin',
-			),
 			'5' => array( /*  Things  */
 				'a' => 'Things',
 				'h' => 'Things',
@@ -112,7 +106,13 @@ $Registry = array (
 				'm' => '3',
 				'url' => 'Admin',
 			),
-			
+            '20' => array( /* Admin Content Item*/
+                'a' => 'AdminContentItem',
+                'h' => 'Lang',
+                'm' => '3',
+                'url' => 'Admin',
+            ),
+
 			'21' => array( /* Admin Members edit */
 				'a' => 'AdminMember',
 				'h' => 'Admin',
@@ -142,12 +142,6 @@ $Registry = array (
 				'h' => 'Document',
 				'm' => '7',
 				'url' => 'Docs',
-			),
-			'31' => array( /* Tracking edit */
-				'a' => 'Tracking',
-				'h' => 'Tracking',
-				'm' => '11',
-				'url' => 'Tracking',
 			),
             '100' => array( /* COMMON */
                 'a' => 'CommonUtils',
@@ -182,32 +176,24 @@ $Registry = array (
 
 		),
 		'Guides' => array(
-			'city' => array(
-				'table' => 'city',
-			),		
-			'country' => array(
+            'language' => array(
+                'table' => 'language',
+            ),
+            'country' => array(
 				'table' => 'country',
-			),			
-			'containertype' => array(
-				'table' => 'containertype',
 			),
-			'month' => array(
+            'module' => array(
+                'table' => 'module',
+            ),
+            'contenttype' => array(
+                'table' => 'contenttype',
+            ),
+            'month' => array(
 				'table' => 'month',
-			),		
-			'education' => array(
-				'table' => 'education',
-			),		
-			'edform' => array(
-				'table' => 'edform',
 			),		
 			'gender' => array(
 				'table' => 'gender',
 			),		
-			'rank' => array(
-				'table' => 'guide_rank',
-			),		
-			
-			
 		),
 	),
 );

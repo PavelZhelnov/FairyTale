@@ -1,22 +1,48 @@
+<script type="text/javascript" src="{rootPath:static}/scripts/utils/dhtmlSuite-autoComplete.js"></script>
 <form method="POST" action="{formaction}" name="auth">
-<table border=0 cellspacing=0 cellpadding=0 width=460 align=center>
+<table border=0 cellspacing=0 cellpadding=0 width=995 height=610 align=center background="{picPath:static}/adminlayout/{things_season_interface:virtual}/background.jpg">
+
 	<tr>
-		<td height=415 align=center valign=middle>
-		{header_error}<p>
-		<table width="490" border="1" align=center cellpadding=0 cellspacing=0>
+		<td height=150 align=center valign=top>
+		{header_error}
+		<table width="995" border="0" align=center cellpadding=0 cellspacing=0>
 		<tr>
-			<td width="478" valign=top align=center >
-			<table border=0 cellpadding=3 cellSpacing=3 width="448" align=center>
-					<tr><td align=center colspan=2 height=45 class=first>Member Area</td></tr>
-					<tr><td valign=middle width=448 align=center colspan=2><b>{model_error}</b></td></tr>
-					<tr><td valign=top width=150 align=right height=35><b>{global.label.admin_username}: </b></td><td valign=top width=298>{login} {login_error}</td></tr>
-					<tr><td valign=top width=150 align=right height=35><b>{global.label.admin_password}: </b></td><td valign=top width=298>{passw} {passw_error}</td></tr>
-					<tr><td align=center colspan=2 height=45>
+			<td width=300>&nbsp;</td>
+			<td>
+				<div class="box_15px">
+				<span class="headline_black">Your Personal Property Management System</span><br>
+				<span class="headline_small_gray"><i>{admin_home_quotation:virtual}</i></span>
+				</div>			
+			</td>
+		</tr>
+		
+		</table>
+		<table width="400" border="0" align=center cellpadding=0 cellspacing=0>
+		<tr>
+			<td valign=top align=center >
+			
+			<fieldset style="width:400px; height:200px;" class="transparent">
+			<legend>{global.label.admin_area}</legend>
+			</fieldset>
+
+			<div style="position: relative; top: -16em;">
+			<table border=0 cellpadding=3 cellSpacing=3 align=center>
+					<tr><td valign=middle align=center colspan=2><b>{model_error}</b></td></tr>
+					<tr><td valign=top align="right" height=30><b>{global.label.admin_username}: </b></td><td valign=top width=298>{login} <br>{login_error}</td></tr>
+					<tr><td valign=top align="right" height=30><b>{global.label.admin_password}: </b></td><td valign=top width=298>{passw} <br>{passw_error}</td></tr>
+					<tr><td valign=top width=150 align=right height=35><label for="signedin"><b>Keep signed in: </b></label></td><td valign=top width=298>{signedin}</td></tr>
+					<tr><td align=center colspan=2 height=35>
 						<input type=hidden name="step" value="auth">{hidden}
-						<input value="{global.button.admin_bt_clear}" name="Reset" type=reset class=button>&nbsp;<input value="{global.button.admin_bt_enter}" name="form[submit]" type=submit class=button style="width:130px;">
+						<input class="button white" value="{global.button.admin_bt_enter}" id="formSubmit" name="form[submit]" type=submit class=button style="width:160px;" onclick="document.forms[0].submit()">
+						&nbsp;&nbsp;
+						
+						<input class="button white" value="Forgot Password?" name="form[submit]" type=button class=button style="width:160px;" onclick="document.location.href = '{rootPath:static}/Admin/password/changerequest';">
 						</td>
 					</tr>
+					
 			</table>
+			</div>
+			
 			</td>
 		</tr>
 		</table>
@@ -24,3 +50,9 @@
 	</tr>
 </table>
 {formEnd:static}
+<span id="action_message" class="action_message" type="message" close="button">{action_message}</span>
+<div class="hidden_text" type="message" id="action_text_" close="button" type="message">{action_message}</div>
+<div class="hidden_text" id="error_text_1" type="error">{action_message_error}</div>
+<script type="text/javascript">
+var formValObj = new DHTMLSuite.formValidator({leftS:static} formRef:'auth',keyValidation:true,callbackOnFormValid:'enableSubmit',callbackOnFormInvalid:'disableSubmit',indicateWithBars:true {rightS:static});
+</script>

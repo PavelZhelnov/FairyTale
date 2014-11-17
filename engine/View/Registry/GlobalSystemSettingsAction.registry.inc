@@ -18,11 +18,6 @@ $Registry = array (
 					'scheme' => 'default',
 					'minPerm' => 2,
 				),				
-				'cities' => array (
-					'minPerm' => 2,
-					'handlerMethod' => 'getCities',
-					'scheme' => 'default',
-				),
 				'members' => array (
 					'minPerm' => 2,
 					'handlerMethod' => 'selectMembers',

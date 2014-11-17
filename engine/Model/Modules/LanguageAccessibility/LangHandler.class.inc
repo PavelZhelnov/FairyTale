@@ -44,22 +44,7 @@ class LangHandler extends Handler {
 		return $request;
 	}
 	
-	function selectModules($request) {
-		if(empty($request['fields'])) $request['fields']='m.id, m.name, m.path, m.preview_name, ml.name as modulename';
-		if(empty($request['sortColumn'])) { $request['sortColumn']=',m.id asc';}
-		if(empty($request['curPageNumber'])) $request['curPageNumber']='1';
-		if(empty($request['pageRecordsQty'])) $request['pageRecordsQty']='100';
-		$request['conditions']['ml.language']=$request['lang'];
-		//$request['conditions']['ci.contenttype']='cit.id';
-		$selected=$this->DB->SelectArray('module as m left join module_lang as ml on m.id=ml.ownerid','count(*) as qty',$request['conditions']);
-		$request['recordsTotal']=$selected[0]['qty'];
-		$request['pagesTotal'] = ceil($request['recordsTotal']/$request['pageRecordsQty']);
-		$request['curPage']=$this->DB->SelectArray(Array('module as m left join module_lang as ml on m.id=ml.ownerid'),$request['fields'],$request['conditions'],'',$this->getLimit($request));
-		return $request;
-
-	}
-	
-	function saveContentItem($request){
+	function saveContentItemAdmin($request){
 		$contentitem=$this->createContentItem();
 		$this->parseRequest($request,$contentitem);
 		$this->DB->processObject($contentitem);
@@ -67,14 +52,14 @@ class LangHandler extends Handler {
 	}
 
 
-	function openContentItem($request){
+	function openContentItemAdmin($request){
 		$contentitem=$this->createContentItem();
 		$this->parseRequest($request,$contentitem);
 		$this->DB->initObject($contentitem);
 		return $contentitem;
 	}
 
-	function selectContentItems($request){
+	function selectContentItemsAdmin($request){
 		
 		$search = $this->getSearch();
 		$request = $this->getConditions($request,$search);
@@ -116,19 +101,9 @@ class LangHandler extends Handler {
 
 	function createContentItem(){
 		$contentitem=new ContentItem();
-		$contentitem->contenttype=new ContentType();
-		$contentitem->item_langs=new ObjectsList();
-		$contentitem->item_langs->type=new ContentItem_Lang();
 		return $contentitem;
 		
 	}
 
-
-
-
-	
 }
-
-
-
 ?>

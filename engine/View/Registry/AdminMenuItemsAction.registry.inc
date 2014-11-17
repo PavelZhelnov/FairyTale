@@ -8,26 +8,16 @@ $Registry = array (
 					'handlerMethod' => 'selectMainMenuAdmin',
 					'scheme' => 'default',
 				),
-				'up' => array (
-					//'minPerm' => 2,
-					'handlerMethod' => 'shiftMenuItemUp',
-					'scheme' => 'default',
-				),
-				'down' => array (
-					//'minPerm' => 2,
-					'handlerMethod' => 'shiftMenuItemDown',
-					'scheme' => 'default',
-				),				
 				'edit' => array (
-					'handlerMethod' => 'getMenuItem',
+					'handlerMethod' => 'getMenuItemAdmin',
 					'scheme' => 'edit',
 				),
 				'update' => array (
-					'handlerMethod' => 'saveMenuItem',
+					'handlerMethod' => 'saveMenuItemAdmin',
 					'scheme' => 'default',
 				),
 				'delete' => array (
-					'handlerMethod' => 'deleteMenuItem',
+					'handlerMethod' => 'deleteMenuItemAdmin',
 					'scheme' => 'default',
 				),
 				'getpages' => array (
@@ -35,7 +25,7 @@ $Registry = array (
 					'sheme' => 'default',
 				),
 				'getmodules' => array (
-					'handlerMethod' => 'selectModulesForMenu',
+					'handlerMethod' => 'selectModules',
 					'sheme' => 'default',
 				),				
 			),

@@ -27,7 +27,6 @@ $REGISTRY['Permissions'] = array();
 // REGISTRY/_Templates
 $REGISTRY['Templates'] = array (
 	'Layout' => 'default.layout.html',
-	'WideLayout' => 'wide.layout.html',
 	'AdminLayout' => 'admin.layout.html',
 	'EmptyLayout' => 'main.html',
 );
@@ -68,25 +67,6 @@ $REGISTRY['VirtualSlotTarget'] = array(
 	'metainfo_title' => array(
 		'' => array(
 			'inherit' => 'MetaInfoView:object?scheme=title',
-			'Locate' => FALSE,
-		),
-	),
-	'autoimage' => array(
-		'' => array(
-			'inherit' => 'AutoImageView:object',
-			'Locate' => FALSE,
-		),
-	),
-	'shipimage' => array(
-		'' => array(
-			'inherit' => 'ShipImageView:object',
-			'Locate' => FALSE,
-		),
-	),
-	
-	'agentmenupanel' => array(
-		'' => array(
-			'inherit' => 'AgentMenuPanelView:object',
 			'Locate' => FALSE,
 		),
 	),
@@ -139,12 +119,6 @@ $REGISTRY['VirtualSlotTarget'] = array(
 			'Locate' => FALSE,
 		),
 	),
-	'tracking_preview' => array(
-		'' => array(
-			'inherit' => 'TrackingView:object?scheme=preview',
-			'Locate' => FALSE,
-		),
-	),
 	'search_preview' => array(
 		'' => array(
 			'inherit' => 'SearchView:object?scheme=preview',
@@ -190,10 +164,6 @@ $REGISTRY['VirtualSlotTarget'] = array(
 		),
 		'/Statistic' => array(
 			'inherit' => 'StatisticView:object',
-			'Locate' => FALSE,
-		),
-		'/tracking' => array(
-			'inherit' => 'TrackingView:object',
 			'Locate' => FALSE,
 		),
 		'/search' => array(

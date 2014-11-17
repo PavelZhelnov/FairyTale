@@ -128,33 +128,17 @@ function showActionMessage() {
         setTimeout("hideActionMessageError()", 4000);
    }
 }
-/*
-function showErrorBox(){
-	return false;
-	var textElement = document.getElementById("error_text_1");
-	var text;
-	if(textElement == null || (text = textElement.innerHTML) == "") // ���� ��� ��������� �� ������ - �������
-		return false;
-	document.getElementById("messagebox_text_1").innerHTML = text;
-	document.getElementById("message_background_1").style.visibility = "visible";
-	document.getElementById("messagebox_container_1").style.visibility = "visible";
-	return true;
-}
-function hideErrorBox(){
-	document.getElementById("messagebox_container_1").style.visibility = "hidden";
-	document.getElementById("message_background_1").style.visibility = "hidden";
-}
-*/
+
 function showMessageBox(textElementId){
 	var textElement = document.getElementById(textElementId);
 	var text;
-	if(textElement == null || (text = textElement.innerHTML) == "") // ���� ��� ��������� �� ������ - �������
+	if(textElement == null || (text = textElement.innerHTML) == "")
 		return false;
 	var style = '', classname = '';
 	var close_button = (textElement.getAttribute('close') == 'button')?true:false;
 	switch (textElement.getAttribute('type')) {
 	case 'message':
-		style = 'background-color: black;';
+		style = 'background-color: #0075BE;';
 		break;
 	case 'error':
 		close_button = true;
@@ -176,17 +160,6 @@ function hideMessageBox(id){
 	document.getElementById(id).style.visibility = "hidden";
 	document.getElementById("message_background_1").style.visibility = "hidden";
 }
-
-/*
- * function showActionMessage(txt,val,sec) { if (txt!='' &&
- * document.getElementById("action_message")!=null) {
- * document.getElementById("action_message").style.visibility = "visible";
- * setTimeout("hideActionMessage()", 2000); } else if (txt!='' &&
- * document.getElementById(val)!=null) {
- * document.getElementById(val).style.visibility = "visible";
- * setTimeout("hideActionMessage1("+val+")", sec); } }
- */
-
 
 function hideActionMessage() {
 	document.getElementById("action_message").style.visibility = "hidden";
